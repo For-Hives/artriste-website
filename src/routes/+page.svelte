@@ -25,27 +25,6 @@
         console.log(oeuvresValue);
     });
 
-
-    // get all values of the current page, values that will be changed automaticaly
-    // const content_burgerContainer = document.getElementById('burger-container');
-    // const content_navigation = document.getElementById('navigation');
-    // const content_title = document.getElementById('title');
-    // const content_authorName = document.getElementById('authorName');
-    // const content_authorNameContainer = document.getElementById('authorNameContainer');
-    // const content_date = document.getElementById('date');
-    // const content_mobile_title = document.getElementById('mobile-title');
-    // const content_mobile_authorName = document.getElementById('mobile-authorName');
-    // const content_mobile_authorNameContainer = document.getElementById('mobile-authorNameContainer');
-    // const content_mobile_date = document.getElementById('mobile-date');
-    // const content_main = document.getElementById('main');
-    // const content_skewCircle = document.getElementById('skew-circle');
-    // const content_secondaryContainer = document.getElementById('secondary-container');
-    // const content_secondary = document.getElementById('secondary');
-    // const content_firstImage = document.getElementById('firstImage');
-    // const content_firstImageCover = document.getElementById('firstImageCover');
-    // const content_secondaryImage = document.getElementById('secondaryImage');
-    // const content_add_to_cart = document.getElementById('add_to_cart');
-
     let flag = false;
     let count = 0;
     let cartItemCount = 0;
@@ -56,7 +35,6 @@
     let flagAnimation = false;
 
     // get the list of images in directory assets/images/art
-
     // on click on the button, change images to the next one
     const handleClick = () => {
         flag = true;
@@ -66,46 +44,17 @@
         setTimeout(() => {
             flag = false;
             handleClickPrevNext(flag);
-
             if (count === images.length - 1) {
                 count = 0;
-                // // set on last image
-                // content_firstImage.src = images[0];
-                // content_firstImageCover.src = images[0];
-                // // set on first image
-                // content_secondaryImage.src = images[1];
-                // // and title, date, author
-                // content_title.innerHTML = titles[0];
-                // content_mobile_title.innerHTML = titles[0];
-                //
-                // content_date.innerHTML = dates[0];
-                // content_mobile_date.innerHTML = dates[0];
-                //
-                // content_authorName.innerHTML = author;
-                // content_mobile_authorName.innerHTML = author;
                 valueToDisplay = 0;
                 valueToDisplay_Alt = 1;
             } else {
-                // content_firstImage.src = images[count + 1];
-                // content_firstImageCover.src = images[count + 1];
                 valueToDisplay = count + 1;
                 if (count === images.length - 2) {
-                    // content_secondaryImage.src = images[0];
                     valueToDisplay_Alt = 0;
                 } else {
-                    // content_secondaryImage.src = images[count + 1 + 1];
                     valueToDisplay_Alt = count + 2;
                 }
-                // and title, date, author
-                // content_title.innerHTML = titles[count + 1];
-                // content_mobile_title.innerHTML = titles[count + 1];
-                //
-                // content_date.innerHTML = dates[count + 1];
-                // content_mobile_date.innerHTML = dates[count + 1];
-                //
-                // content_authorName.innerHTML = author;
-                // content_mobile_authorName.innerHTML = author;
-
                 count++;
             }
         }, 300);
@@ -114,42 +63,16 @@
     const handleClickPrev = () => {
         flag = true;
         handleClickPrevNext(flag);
-
         // with 300ms delay
         setTimeout(() => {
-
             flag = false;
             handleClickPrevNext(flag);
-
             // increment count
             if (count === 0) {
                 count = images.length - 1;
-                // set on last image
-                // content_firstImage.src = images[images.length - 1];
-                // content_firstImageCover.src = images[images.length - 1];
-                // // set on first image
-                // content_secondaryImage.src = images[0];
-                // // and title, date, author
-                // content_title.innerHTML = titles[images.length - 1];
-                // content_mobile_title.innerHTML = titles[images.length - 1];
-                // content_date.innerHTML = dates[images.length - 1];
-                // content_mobile_date.innerHTML = dates[images.length - 1];
-                // content_authorName.innerHTML = author;
-                // content_mobile_authorName.innerHTML = author;
                 valueToDisplay = images.length - 1;
                 valueToDisplay_Alt = 0;
             } else {
-                // content_firstImage.src = images[count - 1];
-                // content_firstImageCover.src = images[count - 1];
-                // content_secondaryImage.src = images[count];
-                //
-                // content_title.innerHTML = titles[count - 1];
-                // content_mobile_title.innerHTML = titles[count - 1];
-                // content_date.src = dates[count - 1];
-                // content_mobile_date.src = dates[count - 1];
-                // content_authorName.src = author;
-                // content_authorNameContainer.src = author;
-
                 valueToDisplay = count - 1;
                 valueToDisplay_Alt = count;
 
@@ -158,135 +81,17 @@
         }, 300);
     }
 
-
     /**
      * true on next, false on prev
      * @param enabler
      */
     function handleClickPrevNext(enabler) {
         if (enabler) {
-            // // on title div change these classes
-            // // add : opacity-0 -z-10
-            // content_title.classList.add('opacity-0', '-z-10');
-
-            // // on authorName div change these classes
-            // // add : opacity-0 -z-10
-
-            // content_authorName.classList.add('opacity-0', '-z-10');
-            // // on date div change these classes
-            // // add : opacity-0 -z-10
-
-            // content_date.classList.add('opacity-0', '-z-10');
-            // // on authorNameContainer div change these classes
-            // // add : opacity-0 -z-10
-            // content_authorNameContainer.classList.add('opacity-0', '-z-10');
-            //
-
-            // // on mobile-title div change these classes
-            // // add : opacity-0 -z-10
-            // content_mobile_title.classList.add('opacity-0', '-z-10');
-            // // on mobile-authorName div change these classes
-            // // add : opacity-0 -z-10
-            // content_mobile_authorName.classList.add('opacity-0', '-z-10');
-            // // on mobile-date div change these classes
-            // // add : opacity-0 -z-10
-            // content_mobile_date.classList.add('opacity-0', '-z-10');
-            // // on mobile-authorNameContainer div change these classes
-            // // add : opacity-0 -z-10
-            // content_mobile_authorNameContainer.classList.add('opacity-0', '-z-10');
-            //
-            // // on main div change these classes
-            // // add : opacity-0 -z-10 -scale-x-100
-            // content_main.classList.add('opacity-0', '-z-10', '-scale-x-100');
-            // // on skew-circle div change these classes
-            // // add : opacity-0
-            // content_skewCircle.classList.add('opacity-0')
-            //
-            // // on secondary div change these classes
-            // // add : opacity-0 -z-10
-            // content_secondary.classList.add('opacity-0', '-z-10');
-            // // on secondary-container div change these classes
-            // // add : opacity-0 -z-10
-            // content_secondaryContainer.classList.add('opacity-0', '-z-10');
-
             flagAnimation = true;
         } else {
-            // // on title div change these classes
-            // // remove : opacity-0 -z-10
-            // content_title.classList.remove('opacity-0', '-z-10');
-            // // on authorName div change these classes
-            // // remove : opacity-0 -z-10
-            // content_authorName.classList.remove('opacity-0', '-z-10');
-            // // on date div change these classes
-            // // remove : opacity-0 -z-10
-            // content_date.classList.remove('opacity-0', '-z-10');
-            // // on authorNameContainer div change these classes
-            // // remove : opacity-0 -z-10
-            // content_authorNameContainer.classList.remove('opacity-0', '-z-10');
-            //
-            // // on mobile-title div change these classes
-            // // remove : opacity-0 -z-10
-            // content_mobile_title.classList.remove('opacity-0', '-z-10');
-            // // on mobile-authorName div change these classes
-            // // remove : opacity-0 -z-10
-            // content_mobile_authorName.classList.remove('opacity-0', '-z-10');
-            // // on mobile-date div change these classes
-            // // remove : opacity-0 -z-10
-            // content_mobile_date.classList.remove('opacity-0', '-z-10');
-            // // on mobile-authorNameContainer div change these classes
-            // // remove : opacity-0 -z-10
-            // content_mobile_authorNameContainer.classList.remove('opacity-0', '-z-10');
-            //
-            // // on main div change these classes
-            // // remove : opacity-0 -z-10 -scale-x-100
-            // content_main.classList.remove('opacity-0', '-z-10', '-scale-x-100');
-            // // on skew-circle div change these classes
-            // // remove : opacity-0
-            // content_skewCircle.classList.remove('opacity-0');
-            //
-            // // on secondary div change these classes
-            // // remove : opacity-0 -z-10
-            // content_secondary.classList.remove('opacity-0', '-z-10');
-            // // on secondary-container div change these classes
-            // // remove : opacity-0 -z-10
-            // content_secondaryContainer.classList.remove('opacity-0', '-z-10');
-
             flagAnimation = false;
         }
     }
-
-    // content_burgerContainer.addEventListener('click', () => {
-    //     flagBurger = !flagBurger;
-    //     if (flagBurger) {
-    //         content_burgerContainer.classList.add('burger-active');
-    //         // on navigation div change these classes
-    //         // possibly add : bg-custom
-    //         // add : opacity-100 translate-y-0 select-auto pointer-events-auto
-    //         // remove : opacity-0 -translate-y-[100vh] select-none pointer-events-none
-    //         content_navigation.classList.add('opacity-100', 'translate-y-0', 'select-auto',
-    //             'pointer-events-auto', 'bg-custom');
-    //         content_navigation.classList.remove('opacity-0', '-translate-y-[100vh]',
-    //             'select-none', 'pointer-events-none');
-    //     } else {
-    //         content_burgerContainer.classList.remove('burger-active');
-    //         // on navigation div change these classes
-    //         // remove : opacity-100 translate-y-0 select-auto pointer-events-auto bg-custom
-    //         // add : opacity-0 -translate-y-[100vh] select-none pointer-events-none
-    //         content_navigation.classList.remove('opacity-100', 'translate-y-0',
-    //             'select-auto', 'pointer-events-auto', 'bg-custom');
-    //         content_navigation.classList.add('opacity-0', '-translate-y-[100vh]', 'select-none', 'pointer-events-none');
-    //     }
-    // });
-    //
-    // content_add_to_cart.addEventListener('click', () => {
-    //     //     todo count the number of the cart
-    //     cartItemCount++;
-    //     //     add to cart by this button
-    //     let value = content_add_to_cart.attributes().value;
-    //     //     todo click on the correct button
-    //     add_to_carts_buttons[value].click();
-    //     content_add_to_cart.innerHTML = cartItemCount;
-    // })
 </script>
 
 
@@ -340,8 +145,6 @@
             2xl:static 2xl:bottom-auto 2xl:left-auto 2xl:flex-row-reverse items-end justify-start gap-[30px] z-30">
                 <!--        {/*  button to go to the next image ( arrow ) */}-->
                 <button class="flex flex-col justify-center items-start gap-[5px]" on:click={handleClick}>
-<!--                        onclick="handleClick()">-->
-                    <!--                        todo here -->
                     <span class="leading-none m-0 p-0 custom-button-text">next</span>
                     <img src="./src/resources/arrow.svg" alt="arrow"
                          class="w-[30px] 2xl:w-[75px] m-0 p-0"/>
@@ -350,8 +153,6 @@
                 </button>
                 <!--        {/* Prev btn */}-->
                 <button class="flex flex-col justify-center items-start gap-[5px]" on:click={handleClickPrev}>
-<!--                        onclick="handleClickPrev()">-->
-                    <!--                        todo here -->
                     <span class="leading-none m-0 p-0 custom-button-text">prev</span>
                     <img src="./src/resources/arrow-prev.svg" alt="arrow"
                          class="w-[30px] 2xl:w-[75px] m-0 p-0"/>
@@ -367,10 +168,7 @@
                         <div class="w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
                         outline-[10px] outline-offset-[15px] outline-double outline-[#D1AC8A] rounded-full">
                         </div>
-                        <!--                        todo : catch onclick event to add in cart the correct item -> use woocommerce functionnalities maybe ? -->
-                        <button id="add_to_cart" class="flex flex-col justify-center items-center absolute top-0 -right-[20%] z-50"
-                                value="1">
-                            <!--                        todo here -->
+                        <button id="add_to_cart" class="flex flex-col justify-center items-center absolute top-0 -right-[20%] z-50" on:click={""}>
                             <img src="./src/resources/button-cart.svg"
                                  alt="add to cart"
                                  class="w-[125px] 2xl:w-[150px] h-[125px] 2xl:h-[150px]"/>
@@ -393,7 +191,6 @@
                              alt="{titles[valueToDisplay]}" src="{images[valueToDisplay]}"/>
                         <img src="/src/resources/star.svg" alt="stars"
                              class="absolute h-[70px] w-[70px] top-0 left-0 transform -translate-x-[135%]"/>
-<!--                        todo here -->
                     </div>
                 </div>
                 <!--    {/* second part ( mobile ) */}-->
