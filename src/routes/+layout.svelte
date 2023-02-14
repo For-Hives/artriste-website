@@ -1,7 +1,7 @@
 <script>
     import "../app.css";
     import { onMount } from "svelte";
-    import {oeuvres} from "../store.ts"
+    import {oeuvres} from "../utils/store.ts"
 
     // Using ES modules (default)
     import PocketBase from 'pocketbase'
@@ -23,8 +23,6 @@
 
 </script>
 
-<header>here</header>
 
 <slot/>
 
-<footer>here</footer>
