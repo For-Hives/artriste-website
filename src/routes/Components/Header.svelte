@@ -13,7 +13,7 @@
 </div>
 <!--{/* Hamburger btn */}-->
 <div class="block 2xl:hidden burger absolute top-0 left-0 z-[60] transform scale-50">
-    <div id="burger-container" class="burger-container burger-active">
+    <div id="burger-container" class="burger-container {flagBurger ? 'burger-active' : ''}">
         <!--             Svg burger menu icon -->
         <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 200 200">
             <g stroke-width="6.5" stroke-linecap="round">
@@ -59,7 +59,7 @@
 <nav id="navigation" class="w-full transform fixed 2xl:static h-screen 2xl:h-[100px] transition
      2xl:bg-transparent 2xl:opacity-100 2xl:translate-y-0 flex flex-col 2xl:flex-row items-center 2xl:px-[250px]
      gap-0 2xl:gap-[50px] py-[100px] 2xl:py-0 z-50 2xl:z-10 2xl:select-auto 2xl:pointer-events-auto
-     opacity-100 translate-y-0 select-auto pointer-events-auto">
+     {flagBurger ? ' opacity-100 pointer-events-auto bg-custom select-auto translate-y-0' : ' opacity-0 -translate-y-[100vh] select-none pointer-events-none'}">
     <div
             class="flex flex-col 2xl:flex-row items-center w-full 2xl:w-1/3 justify-evenly 2xl:justify-between h-full">
         <!--            TODO link to home page -->
