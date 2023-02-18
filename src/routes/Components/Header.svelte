@@ -6,7 +6,6 @@
 <img src="./src/resources/draw.svg" alt="draw in the background"
      class="max-h-screen h-full -z-10 absolute top-0 right-0 filter invert opacity-5 transform
          scale-[3] 2xl:scale-100 overflow-hidden"/>
-
 <!--    Artriste title absolute & hidden on desktop view ( centered on top of the page ) -->
 <div class="absolute top-0 left-0 w-full flex 2xl:hidden justify-center items-center p-[50px]">
     <h2 class="text-center text-5xl font-bold text-slate-50">Artriste</h2>
@@ -62,28 +61,15 @@
      {flagBurger ? ' opacity-100 pointer-events-auto bg-custom select-auto translate-y-0' : ' opacity-0 -translate-y-[100vh] select-none pointer-events-none'}">
     <div
             class="flex flex-col 2xl:flex-row items-center w-full 2xl:w-1/3 justify-evenly 2xl:justify-between h-full">
-        <!--            TODO link to home page -->
         <a class="text-3xl" href="/">Accueil</a>
-        <!--            TODO link to who are we page -->
-        <a class="text-3xl" href="">Qui sommes-nous ?</a>
+        <a class="text-3xl" href="/qui-sommes-nous">Qui sommes nous ?</a>
     </div>
-    <div class="flex items-center 2xl:gap-5 w-full 2xl:w-1/3 justify-center h-full">
+    <a href="/" class="flex items-center 2xl:gap-5 w-full 2xl:w-1/3 justify-center h-full">
         <h2 class="text-center text-5xl font-bold text-slate-50">Artriste</h2>
-    </div>
-    <div class="flex flex-col 2xl:flex-row items-center 2xl:gap-[100px] w-full 2xl:w-1/3
-        justify-evenly 2xl:justify-end h-full">
-        <!--            TODO link ton the contact page -->
-        <a class="text-3xl" href="">Contactez nous</a>
-        <!--            cart value -> button for the paiement process -->
-<!--        <a class="relative" href="">-->
-<!--                <span class="text-xl absolute -top-[5px] left-[calc(50%+2px)] transform -translate-x-1/2 font-bitter">-->
-<!--                    &lt;!&ndash;    todo add cart number elements &ndash;&gt;-->
-<!--                    0-->
-<!--                </span>-->
-<!--            <img src="./src/resources/add-cart.svg" alt="add cart"-->
-<!--                 class="w-[35px] h-[35px]"/>-->
-<!--            &lt;!&ndash;                        todo here &ndash;&gt;-->
-
-<!--        </a>-->
+    </a>
+    <div
+            class="flex flex-col 2xl:flex-row items-center w-full 2xl:w-1/3 justify-evenly 2xl:justify-between h-full">
+        <a class="text-3xl" href="/galerie">Galerie</a>
+        <a class="text-3xl" href="mailto:contact@artriste.cc">Contactez-nous</a>
     </div>
 </nav>

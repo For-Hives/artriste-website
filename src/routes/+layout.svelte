@@ -9,7 +9,6 @@
     const pb = new PocketBase('https://artriste-api.beta.andy-cinquin.fr');
 
     const get_datas = async () => {
-        // console.log(records);
         return await pb.collection('oeuvre').getFullList(200 /* batch size */, {
             sort: '-created',
         });
@@ -20,9 +19,6 @@
         const records = await get_datas();
         oeuvres.set(records);
     });
-
 </script>
 
-
 <slot/>
-

@@ -18,12 +18,11 @@
         titles = oeuvresValue.map(record => record.name);
         // format date to the year
         dates = oeuvresValue.map(record => record.date.split("-")[0]);
-        prices = oeuvresValue.map(record => record.price);
+        prices = oeuvresValue.map(record => record.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " €");
         descriptions = oeuvresValue.map(record => record.description);
         authors = oeuvresValue.map(record => record.author);
-
-        console.log(oeuvresValue);
     });
+
 
     let flag = false;
     let count = 0;
@@ -35,6 +34,7 @@
     let flagAnimation = false;
 
     // get the list of images in directory assets/images/art
+
     // on click on the button, change images to the next one
     const handleClick = () => {
         flag = true;
@@ -44,6 +44,7 @@
         setTimeout(() => {
             flag = false;
             handleClickPrevNext(flag);
+
             if (count === images.length - 1) {
                 count = 0;
                 valueToDisplay = 0;
@@ -63,13 +64,16 @@
     const handleClickPrev = () => {
         flag = true;
         handleClickPrevNext(flag);
+
         // with 300ms delay
         setTimeout(() => {
             flag = false;
             handleClickPrevNext(flag);
+
             // increment count
             if (count === 0) {
                 count = images.length - 1;
+
                 valueToDisplay = images.length - 1;
                 valueToDisplay_Alt = 0;
             } else {
@@ -80,6 +84,7 @@
             }
         }, 300);
     }
+
 
     /**
      * true on next, false on prev
@@ -92,6 +97,7 @@
             flagAnimation = false;
         }
     }
+
 </script>
 
 
@@ -107,13 +113,13 @@
                 <div class="flex flex-col h-full justify-center">
                     <!--                    Catch phrase -->
                     <h1 class="text-[36px] 2xl:text-[40px] text-[#D1AC8A]">
-                        Une collection d'art unique !
+                        Collection exclusive d'œuvres d'art uniques.
                     </h1>
                     <!--                    Little description of the website goal -->
                     <p class="text-[16px] 2xl:text-[20px] text-slate-300">
-                        Des oeuvres d'art uniques et originales, vente à l'unité, ultra limité. Vous serez le seul et
-                        unique
-                        propriétaire de votre oeuvre !
+                        Nous proposons des œuvres d'art uniques et originales, disponibles à l'achat en quantité ultra-limitée.
+                        Chaque œuvre est produite en une seule unité, ce qui signifie que vous en serez le seul et unique propriétaire.
+                        Découvrez notre sélection d'œuvres d'art exclusives et exprimez votre personnalité à travers l'art.
                     </p>
                 </div>
                 <!--                Title desktop part ( changed by javasript on the load of the page ) -->
@@ -168,7 +174,8 @@
                         <div class="w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
                         outline-[10px] outline-offset-[15px] outline-double outline-[#D1AC8A] rounded-full">
                         </div>
-                        <button id="add_to_cart" class="flex flex-col justify-center items-center absolute top-0 -right-[20%] z-50" on:click={""}>
+                        <button id="add_to_cart" class="flex flex-col justify-center items-center absolute top-0 -right-[20%] z-50"
+                                value="1">
                             <img src="./src/resources/button-cart.svg"
                                  alt="add to cart"
                                  class="w-[125px] 2xl:w-[150px] h-[125px] 2xl:h-[150px]"/>
