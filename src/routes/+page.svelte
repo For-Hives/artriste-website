@@ -2,26 +2,43 @@
     import {oeuvres} from "/src/utils/store.ts";
     import {api_origin} from "/src/utils/const.ts";
     import Header from "./Components/Header.svelte";
+    import { onMount } from 'svelte'
     // import Header from "./Components/Header.svelte";
 
-    let oeuvresValue;
-    let images;
-    let titles;
-    let dates;
-    let prices;
-    let descriptions;
-    let authors;
+    let oeuvresValue=[];
+    let images=[];
+    let titles=[];
+    let dates=[];
+    let prices=[];
+    let descriptions=[];
+    let authors=[];
 
-    oeuvres.subscribe(value => {
-        oeuvresValue = value;
-        images = oeuvresValue.map(record => api_origin + record.collectionId + "/" + record.id + "/" + record.image);
-        titles = oeuvresValue.map(record => record.name);
-        // format date to the year
-        dates = oeuvresValue.map(record => record.date.split("-")[0]);
-        prices = oeuvresValue.map(record => record.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " €");
-        descriptions = oeuvresValue.map(record => record.description);
-        authors = oeuvresValue.map(record => record.author);
-    });
+    onMount(async () => {
+        oeuvres.subscribe(value => {
+            oeuvresValue = value;
+            // get size of the viewport, depending on the size, change the image size
+            const width = window.innerWidth;
+            let size = 0;
+            if (width < 768) {
+                size = "100x0";
+            } else if (width < 1024) {
+                size = "150x0";
+            } else if (width < 1280) {
+                size = "200x0";
+            } else if (width < 1536) {
+                size = "250x0";
+            } else {
+                size = "300x0";
+            }
+            images = oeuvresValue.map(record => api_origin + record.collectionId + "/" + record.id + "/" + record.image + "?thumb=" + size);
+            titles = oeuvresValue.map(record => record.name);
+            // format date to the year
+            dates = oeuvresValue.map(record => record.date.split("-")[0]);
+            prices = oeuvresValue.map(record => record.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " €");
+            descriptions = oeuvresValue.map(record => record.description);
+            authors = oeuvresValue.map(record => record.author);
+        });
+    })
 
 
     let flag = false;
