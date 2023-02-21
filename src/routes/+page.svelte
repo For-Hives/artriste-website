@@ -17,20 +17,21 @@
         oeuvres.subscribe(value => {
             oeuvresValue = value;
             // get size of the viewport, depending on the size, change the image size
-            const width = window.innerWidth;
-            let size = 0;
-            if (width < 768) {
-                size = "100x0";
-            } else if (width < 1024) {
-                size = "150x0";
-            } else if (width < 1280) {
-                size = "200x0";
-            } else if (width < 1536) {
-                size = "250x0";
-            } else {
-                size = "300x0";
-            }
-            images = oeuvresValue.map(record => api_origin + record.collectionId + "/" + record.id + "/" + record.image + "?thumb=" + size);
+            // const width = window.innerWidth;
+            // let size = 0;
+            // if (width < 768) {
+            //     size = "100x0";
+            // } else if (width < 1024) {
+            //     size = "150x0";
+            // } else if (width < 1280) {
+            //     size = "200x0";
+            // } else if (width < 1536) {
+            //     size = "250x0";
+            // } else {
+            //     size = "300x0";
+            // }
+            // images = oeuvresValue.map(record => api_origin + record.collectionId + "/" + record.id + "/" + record.image + "?thumb=" + size);
+            images = oeuvresValue.map(record => api_origin + record.collectionId + "/" + record.id + "/" + record.image);
             titles = oeuvresValue.map(record => record.name);
             // format date to the year
             dates = oeuvresValue.map(record => record.date.split("-")[0]);
@@ -164,8 +165,8 @@
                 </div>
             </div>
             <!--            Buttons to go on the next / prev draw -->
-            <div class="absolute bottom-0 left-0 w-full 2xl:w-[60%] flex flex-col-reverse
-            2xl:static 2xl:bottom-auto 2xl:left-auto 2xl:flex-row-reverse items-end justify-start gap-[30px] z-30">
+            <div class="absolute bottom-0 left-0 w-full w-full 2xl:w-[60%] flex flex-row-reverse
+            2xl:static 2xl:bottom-auto 2xl:left-auto 2xl:flex-row-reverse items-start 2xl:items-end justify-start gap-[30px] z-50">
                 <!--        {/*  button to go to the next image ( arrow ) */}-->
                 <button class="flex flex-col justify-center items-start gap-[5px]" on:click={handleClick}>
                     <span class="leading-none m-0 p-0 custom-button-text">next</span>
@@ -218,7 +219,7 @@
                     </div>
                 </div>
                 <!--    {/* second part ( mobile ) */}-->
-                <div class="flex flex-col -z-10 select-none pointer-events-none 2xl:hidden ">
+                <div class="flex flex-col -z-10 select-none pointer-events-none 2xl:hidden pt-[50px]">
                     <h2 class="flex items-center">
                         <!--                        the title on mobile view undisplayed on desktop view, change by javascript when the page is loaded -->
                         <span id="mobile-title"

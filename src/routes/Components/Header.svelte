@@ -4,8 +4,7 @@
 
 <!-- little line drawing on the background -->
 <img src="./src/resources/draw.svg" alt="draw in the background"
-     class="max-h-screen h-full -z-10 absolute top-0 right-0 filter invert opacity-5 transform
-         scale-[3] 2xl:scale-100 overflow-hidden"/>
+     class="max-h-screen h-full -z-10 absolute top-0 right-0 filter invert opacity-5 transform 2xl:scale-100 overflow-hidden"/>
 <!--    Artriste title absolute & hidden on desktop view ( centered on top of the page ) -->
 <div class="absolute top-0 left-0 w-full flex 2xl:hidden justify-center items-center p-[50px]">
     <h2 class="text-center text-5xl font-bold text-slate-50">Artriste</h2>
