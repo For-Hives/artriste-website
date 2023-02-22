@@ -27,9 +27,9 @@
 <Header/>
 <div class="relative min-h-screen w-screen App">
     <main class="w-full 2xl:static
-     2xl:bg-transparent 2xl:opacity-100 2xl:translate-y-0 flex flex-col 2xl:flex-row items-center 2xl:px-[250px]
+     2xl:bg-transparent 2xl:opacity-100 2xl:translate-y-0 flex flex-col 2xl:flex-row items-center 2xl:px-[250px] px-[50px] py-[100px] lg:px-[100px] lg:py-[100px]
      gap-0 2xl:gap-[50px] 2xl:py-0 z-50 2xl:z-10 2xl:select-auto 2xl:pointer-events-auto">
-        <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-16 py-[100px]">
+        <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:gap-x-16 py-[100px]">
             {#each oeuvresValue as item, index}
                 <!-- mailto:contact@artriste.cc , precomplete with title of the article -->
                 <a href="mailto:contact@artriste.cc?subject=J'aimerais acheter l'oeuvre {titles[index]}&body=Bonjour, je suis intéressé par l'oeuvre {titles[index]} de {authors[index]} datant de {dates[index]} et vendue {prices[index]}. Je vous remercie de me re-contacter pour plus d'informations."

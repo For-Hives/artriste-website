@@ -10,8 +10,8 @@
     <h2 class="text-center text-5xl font-bold text-slate-50">Artriste</h2>
 </div>
 <!--{/* Hamburger btn */}-->
-<div class="block 2xl:hidden burger absolute top-0 left-0 z-[60] transform scale-50">
-    <div id="burger-container" class="burger-container {flagBurger ? 'burger-active' : ''}">
+<div class="block 2xl:hidden burger absolute top-0 left-0 z-[70] transform scale-50">
+    <button id="burger-container" class="burger-container {flagBurger ? 'burger-active' : ''}" on:click={()=>{flagBurger=!flagBurger}}>
         <!--             Svg burger menu icon -->
         <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 200 200">
             <g stroke-width="6.5" stroke-linecap="round">
@@ -51,7 +51,7 @@
                 />
             </g>
         </svg>
-    </div>
+    </button>
 </div>
 <!--    the navigation part - nav bar & desktop and mobile view -> animation on that -->
 <nav id="navigation" class="w-full transform fixed 2xl:static h-screen 2xl:h-[100px] transition

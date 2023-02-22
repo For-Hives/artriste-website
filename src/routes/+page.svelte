@@ -166,7 +166,7 @@
             </div>
             <!--            Buttons to go on the next / prev draw -->
             <div class="absolute bottom-0 left-0 w-full w-full 2xl:w-[60%] flex flex-row-reverse
-            2xl:static 2xl:bottom-auto 2xl:left-auto 2xl:flex-row-reverse items-start 2xl:items-end justify-start gap-[30px] z-50">
+            2xl:static 2xl:bottom-auto 2xl:left-auto 2xl:flex-row-reverse items-start 2xl:items-end justify-start gap-[30px] z-60">
                 <!--        {/*  button to go to the next image ( arrow ) */}-->
                 <button class="flex flex-col justify-center items-start gap-[5px]" on:click={handleClick}>
                     <span class="leading-none m-0 p-0 custom-button-text">next</span>
@@ -184,7 +184,7 @@
                 </button>
             </div>
             <!--    {/* main part of the art displayed  */}-->
-            <div id="main" class="flex flex-col 2xl:static 2xl:absolute 2xl:top-1/2 2xl:left-[60%] z-30
+            <div id="main" class="flex flex-col lg:mt-[50px] 2xl:mt-0 2xl:static 2xl:absolute 2xl:top-1/2 2xl:left-[60%] z-30
             transform 2xl:-translate-y-1/2 2xl:-translate-x-1/2 transition-all duration-500 {flagAnimation ? 'opacity-0 -z-10 -scale-x-100' : ''}">
                 <div class="flex flex-col items-center justify-center px-[20%] 2xl:p-0">
                     <div class="relative border-[3px] border-[#D1AC8A] rounded-full">
@@ -192,12 +192,11 @@
                         <div class="w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
                         outline-[10px] outline-offset-[15px] outline-double outline-[#D1AC8A] rounded-full">
                         </div>
-                        <button id="add_to_cart" class="flex flex-col justify-center items-center absolute top-0 -right-[20%] z-50"
-                                value="1">
+                        <a href="/galerie" id="add_to_cart" class="flex flex-col justify-center items-center absolute top-0 -right-[20%] z-50">
                             <img src="./src/resources/button-cart.svg"
                                  alt="add to cart"
                                  class="w-[125px] 2xl:w-[150px] h-[125px] 2xl:h-[150px]"/>
-                        </button>
+                        </a>
                         <!-- the circle that used around the main image -->
                         <!-- the tips for this is on the duplication of the main image, with css mask with the same tips used in photohshop -->
                         <!-- ( all the black masked is displayed and all  the white is undisplayed from the screen -->
