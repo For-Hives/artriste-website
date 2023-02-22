@@ -35,9 +35,9 @@
                 <!--                        image on the front -->
                 <img id="firstImage"
                      class="object-cover w-[300px] h-[350px] 2xl:w-[450px] md:[h-500px] 2xl:h-[600px]"
-                     alt="art personnalisé" src="./src/resources/Andy_C._A_visually_stunning_and_intriguing_image_that_provides__222fda6c-94e2-4c9a-b056-5c0cf1f16bb3.webp"/>
+                     alt="art personnalisé" src="/resources/Andy_C._A_visually_stunning_and_intriguing_image_that_provides__222fda6c-94e2-4c9a-b056-5c0cf1f16bb3.webp"/>
                 <!--                        image on the back -->
-                <img src="/src/resources/star.svg" alt="stars"
+                <img src="/resources/star.svg" alt="stars"
                      class="absolute h-[70px] w-[70px] top-0 right-0 transform translate-x-[145%]"/>
             </div>
         </div>

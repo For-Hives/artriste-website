@@ -3,7 +3,8 @@
     import {api_origin} from "/src/utils/const.ts";
     import Header from "./Components/Header.svelte";
     import { onMount } from 'svelte'
-    // import Header from "./Components/Header.svelte";
+
+
 
     let oeuvresValue=[];
     let images=[];
@@ -16,21 +17,6 @@
     onMount(async () => {
         oeuvres.subscribe(value => {
             oeuvresValue = value;
-            // get size of the viewport, depending on the size, change the image size
-            // const width = window.innerWidth;
-            // let size = 0;
-            // if (width < 768) {
-            //     size = "100x0";
-            // } else if (width < 1024) {
-            //     size = "150x0";
-            // } else if (width < 1280) {
-            //     size = "200x0";
-            // } else if (width < 1536) {
-            //     size = "250x0";
-            // } else {
-            //     size = "300x0";
-            // }
-            // images = oeuvresValue.map(record => api_origin + record.collectionId + "/" + record.id + "/" + record.image + "?thumb=" + size);
             images = oeuvresValue.map(record => api_origin + record.collectionId + "/" + record.id + "/" + record.image);
             titles = oeuvresValue.map(record => record.name);
             // format date to the year
@@ -44,7 +30,6 @@
 
     let flag = false;
     let count = 0;
-    let cartItemCount = 0;
 
     let valueToDisplay = 0;
     let valueToDisplay_Alt = 1;
@@ -170,7 +155,7 @@
                 <!--        {/*  button to go to the next image ( arrow ) */}-->
                 <button class="flex flex-col justify-center items-start gap-[5px]" on:click={handleClick}>
                     <span class="leading-none m-0 p-0 custom-button-text">next</span>
-                    <img src="./src/resources/arrow.svg" alt="arrow"
+                    <img src="/resources/arrow.svg" alt="arrow"
                          class="w-[30px] 2xl:w-[75px] m-0 p-0"/>
 
                     <span class="leading-none m-0 p-0 custom-button-text">next</span>
@@ -178,7 +163,7 @@
                 <!--        {/* Prev btn */}-->
                 <button class="flex flex-col justify-center items-start gap-[5px]" on:click={handleClickPrev}>
                     <span class="leading-none m-0 p-0 custom-button-text">prev</span>
-                    <img src="./src/resources/arrow-prev.svg" alt="arrow"
+                    <img src="/resources/arrow-prev.svg" alt="arrow"
                          class="w-[30px] 2xl:w-[75px] m-0 p-0"/>
                     <span class="leading-none m-0 p-0 custom-button-text">prev</span>
                 </button>
@@ -193,7 +178,7 @@
                         outline-[10px] outline-offset-[15px] outline-double outline-[#D1AC8A] rounded-full">
                         </div>
                         <a href="/galerie" id="add_to_cart" class="flex flex-col justify-center items-center absolute top-0 -right-[20%] z-50">
-                            <img src="./src/resources/button-cart.svg"
+                            <img src="/resources/button-cart.svg"
                                  alt="add to cart"
                                  class="w-[125px] 2xl:w-[150px] h-[125px] 2xl:h-[150px]"/>
                         </a>
@@ -213,7 +198,7 @@
                         <img id="firstImageCover"
                              class="object-cover w-[300px] 2xl:w-[350px] h-[350px] 2xl:h-[600px] rounded-full"
                              alt="{titles[valueToDisplay]}" src="{images[valueToDisplay]}"/>
-                        <img src="/src/resources/star.svg" alt="stars"
+                        <img src="/resources/star.svg" alt="stars"
                              class="absolute h-[70px] w-[70px] top-0 left-0 transform -translate-x-[135%]"/>
                     </div>
                 </div>
