@@ -6,9 +6,9 @@
 <img src="/resources/draw.svg" alt="draw in the background"
      class="max-h-screen h-full -z-10 absolute top-0 right-0 filter invert opacity-5 transform 2xl:scale-100 overflow-hidden"/>
 <!--    Artriste title absolute & hidden on desktop view ( centered on top of the page ) -->
-<div class="absolute top-0 left-0 w-full flex 2xl:hidden justify-center items-center p-[50px]">
+<a href="/" class="absolute top-0 left-0 w-full flex 2xl:hidden justify-center items-center p-[50px] z-10">
     <h2 class="text-center text-5xl font-bold text-slate-50">Artriste</h2>
-</div>
+</a>
 <!--{/* Hamburger btn */}-->
 <div class="block 2xl:hidden burger absolute top-0 left-0 z-[70] transform scale-50">
     <button id="burger-container" class="burger-container {flagBurger ? 'burger-active' : ''}" on:click={()=>{flagBurger=!flagBurger}}>
@@ -58,17 +58,16 @@
      2xl:bg-transparent 2xl:opacity-100 2xl:translate-y-0 flex flex-col 2xl:flex-row items-center 2xl:px-[250px]
      gap-0 2xl:gap-[50px] py-[100px] 2xl:py-0 z-50 2xl:z-10 2xl:select-auto 2xl:pointer-events-auto
      {flagBurger ? ' opacity-100 pointer-events-auto bg-custom select-auto translate-y-0' : ' opacity-0 -translate-y-[100vh] select-none pointer-events-none'}">
-    <div
-            class="flex flex-col 2xl:flex-row items-center w-full 2xl:w-1/3 justify-evenly 2xl:justify-between h-full">
-        <a class="text-3xl" href="/">Accueil</a>
-        <a class="text-3xl" href="/qui-sommes-nous">Qui sommes nous ?</a>
-    </div>
-    <a href="/" class="flex items-center 2xl:gap-5 w-full 2xl:w-1/3 justify-center h-full">
-        <h2 class="text-center text-5xl font-bold text-slate-50">Artriste</h2>
+  <div
+    class="flex flex-col 2xl:flex-row items-center w-full 2xl:w-1/3 justify-evenly 2xl:justify-between h-full">
+    <a href="/" class="flex items-center justify-start h-full">
+      <h2 class="text-center text-5xl font-bold text-slate-50">Artriste</h2>
     </a>
-    <div
-            class="flex flex-col 2xl:flex-row items-center w-full 2xl:w-1/3 justify-evenly 2xl:justify-between h-full">
-        <a class="text-3xl" href="/galerie">Galerie</a>
-        <a class="text-3xl" href="mailto:contact@artriste.cc">Contactez-nous</a>
-    </div>
+  </div>
+  <div
+    class="flex flex-col 2xl:flex-row items-center w-full 2xl:w-2/3 justify-evenly 2xl:justify-between 2xl:pl-[10%] h-full">
+    <a class="text-3xl" href="/galerie">Galerie</a>
+    <a class="text-3xl" href="/qui-sommes-nous">Qui sommes-nous ?</a>
+    <a class="text-3xl" href="mailto:contact@artriste.cc">Contactez-nous</a>
+  </div>
 </nav>

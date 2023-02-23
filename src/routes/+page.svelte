@@ -101,6 +101,17 @@
         }
     }
 
+//     auto change image every 5s
+    setInterval(() => {
+        handleClick();
+    }, 5000);
+
+    // change the title, author and date on the load of the page
+    onMount(() => {
+        setTimeout(() => {
+            flagAnimation = false;
+        }, 300);
+    })
 </script>
 
 
@@ -115,7 +126,7 @@
             justify-between pt-[100px] 2xl:justify-center">
                 <div class="flex flex-col h-full justify-center">
                     <!--                    Catch phrase -->
-                    <h1 class="text-[36px] 2xl:text-[40px] text-[#D1AC8A]">
+                    <h1 class="text-[36px] 2xl:text-[46px] text-[#D1AC8A] font-bold">
                         Collection exclusive d'œuvres d'art uniques.
                     </h1>
                     <!--                    Little description of the website goal -->
@@ -129,7 +140,7 @@
                 <div class="hidden 2xl:flex flex-col">
                     <h2 class="flex items-center">
                         <span id="title"
-                              class="font-square text-[50px] 2xl:text-[100px] leading-tight font-bold text-[#D1AC8A]
+                              class="font-square text-[30px] 2xl:text-[50px] leading-tight text-[#D1AC8A]
                               transition-all duration-300 {flagAnimation ? 'opacity-0 -z-10' : ''}">
                             {titles[valueToDisplay]}
                         </span>
@@ -150,24 +161,23 @@
                 </div>
             </div>
             <!--            Buttons to go on the next / prev draw -->
-            <div class="absolute bottom-0 left-0 w-full w-full 2xl:w-[60%] flex flex-row-reverse
-            2xl:static 2xl:bottom-auto 2xl:left-auto 2xl:flex-row-reverse items-start 2xl:items-end justify-start gap-[30px] z-60">
-                <!--        {/*  button to go to the next image ( arrow ) */}-->
-                <button class="flex flex-col justify-center items-start gap-[5px]" on:click={handleClick}>
-                    <span class="leading-none m-0 p-0 custom-button-text">next</span>
-                    <img src="/resources/arrow.svg" alt="arrow"
-                         class="w-[30px] 2xl:w-[75px] m-0 p-0"/>
-
-                    <span class="leading-none m-0 p-0 custom-button-text">next</span>
-                </button>
-                <!--        {/* Prev btn */}-->
-                <button class="flex flex-col justify-center items-start gap-[5px]" on:click={handleClickPrev}>
-                    <span class="leading-none m-0 p-0 custom-button-text">prev</span>
-                    <img src="/resources/arrow-prev.svg" alt="arrow"
-                         class="w-[30px] 2xl:w-[75px] m-0 p-0"/>
-                    <span class="leading-none m-0 p-0 custom-button-text">prev</span>
-                </button>
-            </div>
+<!--            <div class="absolute bottom-0 left-0 w-full w-full 2xl:w-[60%] flex flex-row-reverse-->
+<!--            2xl:static 2xl:bottom-auto 2xl:left-auto 2xl:flex-row-reverse items-start 2xl:items-end justify-start gap-[30px] z-60">-->
+<!--                &lt;!&ndash;        {/*  button to go to the next image ( arrow ) */}&ndash;&gt;-->
+<!--                <button class="flex flex-col justify-center items-start gap-[5px]" on:click={handleClick}>-->
+<!--                    <span class="leading-none m-0 p-0 custom-button-text">next</span>-->
+<!--                    <img src="/resources/arrow.svg" alt="arrow"-->
+<!--                         class="w-[30px] 2xl:w-[75px] m-0 p-0"/>-->
+<!--                    <span class="leading-none m-0 p-0 custom-button-text">next</span>-->
+<!--                </button>-->
+<!--                &lt;!&ndash;        {/* Prev btn */}&ndash;&gt;-->
+<!--                <button class="flex flex-col justify-center items-start gap-[5px]" on:click={handleClickPrev}>-->
+<!--                    <span class="leading-none m-0 p-0 custom-button-text">prev</span>-->
+<!--                    <img src="/resources/arrow-prev.svg" alt="arrow"-->
+<!--                         class="w-[30px] 2xl:w-[75px] m-0 p-0"/>-->
+<!--                    <span class="leading-none m-0 p-0 custom-button-text">prev</span>-->
+<!--                </button>-->
+<!--            </div>-->
             <!--    {/* main part of the art displayed  */}-->
             <div id="main" class="flex flex-col lg:mt-[50px] 2xl:mt-0 2xl:static 2xl:absolute 2xl:top-1/2 2xl:left-[60%] z-30
             transform 2xl:-translate-y-1/2 2xl:-translate-x-1/2 transition-all duration-500 {flagAnimation ? 'opacity-0 -z-10 -scale-x-100' : ''}">

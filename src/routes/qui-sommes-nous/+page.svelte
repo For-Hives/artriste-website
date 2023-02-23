@@ -4,10 +4,10 @@
 
 <!-- SEO PAGE -->
 <Header/>
-<main class="w-full py-[200px] px-[10%] xl:px-[10%] 2xl:static
+<main class="w-full py-[200px] px-[10%] xl:px-[10%] 2xl:static min-h-[calc(100vh-100px)]
      2xl:bg-transparent 2xl:opacity-100 2xl:translate-y-0 flex flex-col xl:flex-row 2xl:px-[250px]
      gap-0 2xl:gap-[50px] 2xl:py-[100px] z-50 2xl:z-10 2xl:select-auto 2xl:pointer-events-auto items-center">
-    <div class="w-full xl:w-1/2 pb-[100px]">
+    <div class="w-full xl:w-1/2">
         <h1 class="text-5xl xs:text-7xl font-bold mb-4">Communauté d'artistes et d'artisans&nbsp;:&nbsp;créateurs d'œuvres d'art uniques en édition limitée</h1>
         <p class="text-md xs:text-lg mb-6">Notre communauté est composée d'artistes et d'artisans indépendants, passionnés par la création d'œuvres d'art uniques. Chacune de nos pièces est
             réalisée avec soin et expertise, reflétant l'inspiration et la créativité de son créateur. Nous croyons en l'originalité et l'authenticité, et ne proposons que des
