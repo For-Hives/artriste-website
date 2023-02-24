@@ -7,7 +7,3 @@ export default defineConfig({
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	}
 });
-
-
-
-

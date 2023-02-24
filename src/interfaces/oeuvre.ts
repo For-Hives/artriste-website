@@ -14,15 +14,15 @@
 //     "expand": {}
 // }
 export type Oeuvre = {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
-    author: string;
-    date: string;
-    image: string;
-    collectionId: string;
-    collectionName: string;
-    created: string;
-    updated: string;
-}
+	id: number;
+	name: string;
+	description: string;
+	price: number;
+	author: string;
+	date: string;
+	image: string;
+	collectionId: string;
+	collectionName: string;
+	created: string;
+	updated: string;
+};
