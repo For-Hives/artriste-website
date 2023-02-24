@@ -2,17 +2,16 @@
     import {oeuvres} from "/src/utils/store.ts";
     import {api_origin} from "/src/utils/const.ts";
     import Header from "./Components/Header.svelte";
-    import { onMount } from 'svelte'
+    import {onMount} from 'svelte'
 
 
-
-    let oeuvresValue=[];
-    let images=[];
-    let titles=[];
-    let dates=[];
-    let prices=[];
-    let descriptions=[];
-    let authors=[];
+    let oeuvresValue = [];
+    let images = [];
+    let titles = [];
+    let dates = [];
+    let prices = [];
+    let descriptions = [];
+    let authors = [];
 
     onMount(async () => {
         oeuvres.subscribe(value => {
@@ -28,25 +27,26 @@
     })
 
 
-    let flag = false;
     let count = 0;
 
     let valueToDisplay = 0;
     let valueToDisplay_Alt = 1;
 
     let flagAnimation = false;
+    let skewFlagAnimation = false;
 
     // get the list of images in directory assets/images/art
 
     // on click on the button, change images to the next one
-    const handleClick = () => {
-        flag = true;
-        handleClickPrevNext(flag);
+    const handleNextImage = () => {
+
+        flagAnimation = true;
+        skewFlagAnimation = true;
 
         // with 300ms delay
         setTimeout(() => {
-            flag = false;
-            handleClickPrevNext(flag);
+
+            flagAnimation = false;
 
             if (count === images.length - 1) {
                 count = 0;
@@ -62,16 +62,18 @@
                 count++;
             }
         }, 300);
+        setTimeout(() => {
+            skewFlagAnimation = false;
+        }, 1000);
     }
     // same as handleClick but for the previous button
     const handleClickPrev = () => {
-        flag = true;
-        handleClickPrevNext(flag);
+        flagAnimation = true
+        skewFlagAnimation = true;
 
         // with 300ms delay
         setTimeout(() => {
-            flag = false;
-            handleClickPrevNext(flag);
+            flagAnimation = false;
 
             // increment count
             if (count === 0) {
@@ -86,19 +88,10 @@
                 count--;
             }
         }, 300);
-    }
 
-
-    /**
-     * true on next, false on prev
-     * @param enabler
-     */
-    function handleClickPrevNext(enabler) {
-        if (enabler) {
-            flagAnimation = true;
-        } else {
-            flagAnimation = false;
-        }
+        setTimeout(() => {
+            skewFlagAnimation = false;
+        }, 1000);
     }
 
 //     auto change image every 5s
@@ -131,9 +124,12 @@
                     </h1>
                     <!--                    Little description of the website goal -->
                     <p class="text-[16px] 2xl:text-[20px] text-slate-300">
-                        Nous proposons des œuvres d'art uniques et originales, disponibles à l'achat en quantité ultra-limitée.
-                        Chaque œuvre est produite en une seule unité, ce qui signifie que vous en serez le seul et unique propriétaire.
-                        Découvrez notre sélection d'œuvres d'art exclusives et exprimez votre personnalité à travers l'art.
+                        Nous proposons des œuvres d'art uniques et originales, disponibles à l'achat en quantité
+                        ultra-limitée.
+                        Chaque œuvre est produite en une seule unité, ce qui signifie que vous en serez le seul et
+                        unique propriétaire.
+                        Découvrez notre sélection d'œuvres d'art exclusives et exprimez votre personnalité à travers
+                        l'art.
                     </p>
                 </div>
                 <!--                Title desktop part ( changed by javasript on the load of the page ) -->
@@ -180,14 +176,15 @@
 <!--            </div>-->
             <!--    {/* main part of the art displayed  */}-->
             <div id="main" class="flex flex-col lg:mt-[50px] 2xl:mt-0 2xl:static 2xl:absolute 2xl:top-1/2 2xl:left-[60%] z-30
-            transform 2xl:-translate-y-1/2 2xl:-translate-x-1/2 transition-all duration-500 {flagAnimation ? 'opacity-0 -z-10 -scale-x-100' : ''}">
+            transform 2xl:-translate-y-1/2 2xl:-translate-x-1/2 transition-all duration-500 ">
                 <div class="flex flex-col items-center justify-center px-[20%] 2xl:p-0">
-                    <div class="relative border-[3px] border-[#D1AC8A] rounded-full">
+                    <div class="relative border-[#D1AC8A] rounded-full  transition-all duration-500 {!flagAnimation ? 'border-[3px] ' : 'border-[0px] border-[#fff]'}">
                         <!--                        outline div around the image -->
                         <div class="w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                        outline-[10px] outline-offset-[15px] outline-double outline-[#D1AC8A] rounded-full">
+                        outline-[10px] outline-offset-[15px] outline-double outline-[#D1AC8A] rounded-full ">
                         </div>
-                        <a href="/galerie" id="add_to_cart" class="flex flex-col justify-center items-center absolute top-0 -right-[20%] z-50">
+                        <a href="/galerie" id="add_to_cart"
+                           class="flex flex-col justify-center items-center absolute top-0 -right-[20%] z-50 ">
                             <img src="/resources/button-cart.svg"
                                  alt="add to cart"
                                  class="w-[125px] 2xl:w-[150px] h-[125px] 2xl:h-[150px]"/>
@@ -197,16 +194,16 @@
                         <!-- ( all the black masked is displayed and all  the white is undisplayed from the screen -->
                         <div id="skew-circle"
                              class="w-[250px] 2xl:w-[350px] h-[250px] 2xl:h-[350px] border-[3px] border-slate-300
-                             rounded-full absolute bottom-0 left-1/2 z-5 skew-circle transition-all duration-500 {flagAnimation ? 'opacity-0' : ''}">
+                             rounded-full absolute bottom-0 left-1/2 z-5 skew-circle transition-all duration-500 z-10 {skewFlagAnimation ? ' skew-circle-fade' : ''}">
                         </div>
                         <!--                        image on the front -->
                         <img id="firstImage"
                              class="object-cover w-[300px] 2xl:w-[350px] h-[350px] 2xl:h-[600px] rounded-full
-                        absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 custom-z-index"
+                        absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 custom-z-index z-11 transition-all duration-250 {flagAnimation ? ' opacity-0 scale-50 -z-10' : ''}"
                              alt="{titles[valueToDisplay]}" src="{images[valueToDisplay]}"/>
                         <!--                        image on the back -->
                         <img id="firstImageCover"
-                             class="object-cover w-[300px] 2xl:w-[350px] h-[350px] 2xl:h-[600px] rounded-full"
+                             class="object-cover w-[300px] 2xl:w-[350px] h-[350px] 2xl:h-[600px] rounded-full transition-all duration-250 {flagAnimation ? ' scale-50 opacity-0' : ''}"
                              alt="{titles[valueToDisplay]}" src="{images[valueToDisplay]}"/>
                         <img src="/resources/star.svg" alt="stars"
                              class="absolute h-[70px] w-[70px] top-0 left-0 transform -translate-x-[135%]"/>
@@ -250,7 +247,8 @@
                         outline-[10px] outline-offset-[15px] outline-double outline-[#D1AC8A] rounded-full">
                         </div>
                         <img id="secondaryImage"
-                             class="object-cover w-[250px] 2xl:w-[350px] h-[250px] 2xl:h-[600px] rounded-full"
+                             class="object-cover w-[250px] 2xl:w-[350px] h-[250px] 2xl:h-[600px] rounded-full transition-all
+                             {flagAnimation ? 'duration-500 -translate-x-3/4 translate-y-1/4 scale-150 opacity-0' : 'duration-0'}"
                              alt="{titles[valueToDisplay_Alt]}" src="{images[valueToDisplay_Alt]}"/>
                     </div>
                 </div>
