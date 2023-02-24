@@ -66,37 +66,11 @@
             skewFlagAnimation = false;
         }, 1000);
     }
-    // same as handleClick but for the previous button
-    const handleClickPrev = () => {
-        flagAnimation = true
-        skewFlagAnimation = true;
 
-        // with 300ms delay
-        setTimeout(() => {
-            flagAnimation = false;
 
-            // increment count
-            if (count === 0) {
-                count = images.length - 1;
-
-                valueToDisplay = images.length - 1;
-                valueToDisplay_Alt = 0;
-            } else {
-                valueToDisplay = count - 1;
-                valueToDisplay_Alt = count;
-
-                count--;
-            }
-        }, 300);
-
-        setTimeout(() => {
-            skewFlagAnimation = false;
-        }, 1000);
-    }
-
-//     auto change image every 5s
+    //     auto change image every 5s
     setInterval(() => {
-        handleClick();
+        handleNextImage();
     }, 5000);
 
     // change the title, author and date on the load of the page
@@ -157,23 +131,23 @@
                 </div>
             </div>
             <!--            Buttons to go on the next / prev draw -->
-<!--            <div class="absolute bottom-0 left-0 w-full w-full 2xl:w-[60%] flex flex-row-reverse-->
-<!--            2xl:static 2xl:bottom-auto 2xl:left-auto 2xl:flex-row-reverse items-start 2xl:items-end justify-start gap-[30px] z-60">-->
-<!--                &lt;!&ndash;        {/*  button to go to the next image ( arrow ) */}&ndash;&gt;-->
-<!--                <button class="flex flex-col justify-center items-start gap-[5px]" on:click={handleClick}>-->
-<!--                    <span class="leading-none m-0 p-0 custom-button-text">next</span>-->
-<!--                    <img src="/resources/arrow.svg" alt="arrow"-->
-<!--                         class="w-[30px] 2xl:w-[75px] m-0 p-0"/>-->
-<!--                    <span class="leading-none m-0 p-0 custom-button-text">next</span>-->
-<!--                </button>-->
-<!--                &lt;!&ndash;        {/* Prev btn */}&ndash;&gt;-->
-<!--                <button class="flex flex-col justify-center items-start gap-[5px]" on:click={handleClickPrev}>-->
-<!--                    <span class="leading-none m-0 p-0 custom-button-text">prev</span>-->
-<!--                    <img src="/resources/arrow-prev.svg" alt="arrow"-->
-<!--                         class="w-[30px] 2xl:w-[75px] m-0 p-0"/>-->
-<!--                    <span class="leading-none m-0 p-0 custom-button-text">prev</span>-->
-<!--                </button>-->
-<!--            </div>-->
+            <!--            <div class="absolute bottom-0 left-0 w-full w-full 2xl:w-[60%] flex flex-row-reverse-->
+            <!--            2xl:static 2xl:bottom-auto 2xl:left-auto 2xl:flex-row-reverse items-start 2xl:items-end justify-start gap-[30px] z-60">-->
+            <!--                &lt;!&ndash;        {/*  button to go to the next image ( arrow ) */}&ndash;&gt;-->
+            <!--                <button class="flex flex-col justify-center items-start gap-[5px]" on:click={handleClick}>-->
+            <!--                    <span class="leading-none m-0 p-0 custom-button-text">next</span>-->
+            <!--                    <img src="/resources/arrow.svg" alt="arrow"-->
+            <!--                         class="w-[30px] 2xl:w-[75px] m-0 p-0"/>-->
+            <!--                    <span class="leading-none m-0 p-0 custom-button-text">next</span>-->
+            <!--                </button>-->
+            <!--                &lt;!&ndash;        {/* Prev btn */}&ndash;&gt;-->
+            <!--                <button class="flex flex-col justify-center items-start gap-[5px]" on:click={handleClickPrev}>-->
+            <!--                    <span class="leading-none m-0 p-0 custom-button-text">prev</span>-->
+            <!--                    <img src="/resources/arrow-prev.svg" alt="arrow"-->
+            <!--                         class="w-[30px] 2xl:w-[75px] m-0 p-0"/>-->
+            <!--                    <span class="leading-none m-0 p-0 custom-button-text">prev</span>-->
+            <!--                </button>-->
+            <!--            </div>-->
             <!--    {/* main part of the art displayed  */}-->
             <div id="main" class="flex flex-col lg:mt-[50px] 2xl:mt-0 2xl:static 2xl:absolute 2xl:top-1/2 2xl:left-[60%] z-30
             transform 2xl:-translate-y-1/2 2xl:-translate-x-1/2 transition-all duration-500 ">
@@ -194,7 +168,7 @@
                         <!-- ( all the black masked is displayed and all  the white is undisplayed from the screen -->
                         <div id="skew-circle"
                              class="w-[250px] 2xl:w-[350px] h-[250px] 2xl:h-[350px] border-[3px] border-slate-300
-                             rounded-full absolute bottom-0 left-1/2 z-5 skew-circle transition-all duration-500 z-10 {skewFlagAnimation ? ' skew-circle-fade' : ''}">
+                             rounded-full absolute bottom-0 left-1/2 z-5 skew-circle transition-all duration-500  {skewFlagAnimation ? ' skew-circle-fade' : ''}">
                         </div>
                         <!--                        image on the front -->
                         <img id="firstImage"
