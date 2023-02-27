@@ -21,3 +21,5 @@ jobs:
           context: .
           push: true
           tags: andycinquin/artriste-prod:latest
+      - name: Deploy on cap rover
+        run: docker run caprover/cli-caprover:latest caprover deploy --caproverUrl "${{ secrets.APP_URL }}" --appToken "${{ secrets.APP_TOKEN }}" --caproverApp "${{ secrets.APP_NAME }}" --imageName "{{ secrets.APP_IMAGE }}"
