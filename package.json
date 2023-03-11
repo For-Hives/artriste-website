@@ -36,6 +36,6 @@
 	"type": "module",
 	"dependencies": {
 		"eventsource": "^2.0.2",
-		"pocketbase": "^0.10.1"
+		"pocketbase": "^0.12.0"
 	}
 }
