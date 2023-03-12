@@ -17,14 +17,7 @@ async function get_datas(): Promise<Oeuvre[]> {
 
 /** @type {import("./$types").LayoutLoad} */
 export async function load() {
-
-
   // set data
   const records = await get_datas();
-
-  console.log("oevre before set");
   oeuvres.set(records);
-
-  console.log("data loaded");
-
 }

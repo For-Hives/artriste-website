@@ -1,15 +1,28 @@
 <script>
   import { api_origin } from "/src/utils/const";
+  import { goto } from "$app/navigation";
 
   /** @type {import("./$types").PageData} */
   export let data;
 
   const oeuvre = data.oeuvre;
+  let processing = false;
+
+  async function submit() {
+    // avoid processing duplicates
+
+    if (processing) return;
+    processing = true;
+
+    // payment succeeded, redirect to "thank you" page
+    goto("/payment?oeuvre=" + oeuvre.id);
+
+  }
 
 </script>
 
 
-<div class="bg-white w-screen">
+<div class=" w-screen">
   <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
 
     <!-- Product image -->
@@ -26,20 +39,21 @@
         <ol class="flex items-center space-x-2">
           <li v-for="(breadcrumb, breadcrumbIdx) in product.breadcrumbs" :key="breadcrumb.id">
             <div class="flex items-center text-sm">
-              <a href="/"
-                 class="font-medium text-gray-500 hover:text-gray-900">{oeuvre.name}</a>
+              <a href="/galerie"
+                 class="font-large text-gray-500 hover:text-gray-300">Galerie</a>
               <svg v-if="breadcrumbIdx !== product.breadcrumbs.length - 1" viewBox="0 0 20 20"
                    fill="currentColor" aria-hidden="true"
                    class="ml-2 h-5 w-5 flex-shrink-0 text-gray-300">
                 <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
               </svg>
+              {oeuvre.name}
             </div>
           </li>
         </ol>
       </nav>
 
       <div class="mt-4">
-        <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{oeuvre.name}</h1>
+        <h1 class="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">{oeuvre.name}</h1>
       </div>
 
       <section aria-labelledby="information-heading" class="mt-4">
@@ -47,27 +61,25 @@
 
 
         <div class="mt-4 space-y-6">
-          <p class="text-base text-gray-600">{ oeuvre.description}</p>
+          <p class="text-base text-gray-600">
+            {@html oeuvre.description}
+          </p>
         </div>
-
-
         <div class="mt-6 flex items-center">
-          <p class="ml-2 text-sm text-gray-500">En stock</p>
+          <p class="ml-2 text-sm text-gray-400">En stock</p>
         </div>
       </section>
     </div>
-
 
     <!-- Product form -->
     <div class="mt-10 lg:col-start-2 lg:row-start-2 lg:max-w-lg lg:self-start">
       <section aria-labelledby="options-heading">
         <h2 id="options-heading" class="sr-only">Product options</h2>
-        <form>
+        <form on:submit|preventDefault={submit}>
           <div class="mt-10">
-            <button type="submit"
-                    class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50">
-              Acheter
-            </button>
+            <input type="submit"
+                   value="Acheter"
+                   class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50">
           </div>
 
         </form>

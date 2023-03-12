@@ -7,17 +7,8 @@ export async function load({ params, parent }) {
   const p = await parent();
   let oeuvre;
 
-  console.log("page load");
-
-
   await oeuvres.subscribe((oeuvres) => {
-
       oeuvre = oeuvres.find((oeuvre) => oeuvre.name === params.slug);
-
-      console.log("find !");
-
-      console.log(params.slug);
-      console.log(oeuvre);
     }
   );
 
@@ -26,8 +17,6 @@ export async function load({ params, parent }) {
   }
 
   return {
-
     oeuvre: oeuvre
-
   };
 }
