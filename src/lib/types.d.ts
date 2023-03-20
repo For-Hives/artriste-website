@@ -1,6 +1,6 @@
-import type { StripeElements, Stripe } from '@stripe/stripe-js'
+import type { StripeElements, Stripe } from '@stripe/stripe-js';
 
 interface ElementsContext {
-  elements: StripeElements
-  stripe: Stripe
+	elements: StripeElements;
+	stripe: Stripe;
 }
