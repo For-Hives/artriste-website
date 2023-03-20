@@ -35,7 +35,11 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@headlessui/vue": "^1.7.11",
+		"@heroicons/vue": "^2.0.16",
+		"@stripe/stripe-js": "^1.47.0",
 		"eventsource": "^2.0.2",
-		"pocketbase": "^0.12.0"
+		"pocketbase": "^0.10.1",
+		"stripe": "^11.12.0"
 	}
 }

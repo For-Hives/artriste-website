@@ -2,7 +2,6 @@
 	import Header from '../Components/Header.svelte';
 	import { oeuvres } from '/src/utils/store.ts';
 	import { api_origin } from '/src/utils/const.ts';
-	// import Header from "./Components/Header.svelte";
 
 	let oeuvresValue = [];
 	let images = ['/favicon.webp', '/favicon.webp'];
@@ -42,16 +41,7 @@
 		>
 			{#each oeuvresValue as item, index}
 				<!-- mailto:contact@artriste.cc , precomplete with title of the article -->
-				<a
-					href="mailto:contact@artriste.cc?subject=J'aimerais acheter l'oeuvre {titles[
-						index
-					]}&body=Bonjour, je suis intéressé par l'oeuvre {titles[index]} de {authors[
-						index
-					]} datant de {dates[index]} et vendue {prices[
-						index
-					]}. Je vous remercie de me re-contacter pour plus d'informations."
-					class="group text-sm"
-				>
+				<a href="/detail/{item.name}" class="group text-sm">
 					<div
 						class="aspect-w-1 aspect-h-1 w-full overflow-hidden transition transition-all duration-300 group-hover:opacity-75 relative"
 					>
@@ -61,13 +51,13 @@
 							class="h-full w-full object-cover object-center group"
 						/>
 						<div class="overflow-hidden">
-							<!--                            date on right corner -->
+							<!--          date on right corner -->
 							<p
 								class="absolute top-0 right-0 bg-gray-900 text-white px-2 py-1 text-xs font-medium rounded-bl-lg"
 							>
 								{dates[index]}
 							</p>
-							<!--                            CTA on hover the image, on bottom middle of the image -->
+							<!--             CTA on hover the image, on bottom middle of the image -->
 							<p
 								class="absolute bottom-0 left-0 right-0 bg-gray-900 text-white px-2 py-1 text-xs font-medium text-center mx-[30px]
                             transition transition-all duration-300 transform translate-y-[30px] opacity-0 group-hover:translate-y-[-10px] group-hover:opacity-100"
@@ -78,7 +68,7 @@
 					</div>
 					<h3 class="mt-4 font-bold text-5xl text-gray-100">{titles[index]}</h3>
 					<p class="italic text-gray-400 my-4">{prices[index]}</p>
-					<p class="my-1 italic text-gray-200">{@html descriptions[index]}</p>
+					<p class="my-1 italic text-gray-200">{@html descriptions[index].slice(0, 250)}...</p>
 					<p class="mt-2 font-medium text-gray-100">
 						{authors[index]}
 					</p>
