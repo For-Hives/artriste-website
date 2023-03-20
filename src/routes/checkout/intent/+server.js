@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import Stripe from 'stripe';
-import { SECRET_STRIPE_KEY } from '$env/static/private';
+import { SECRET_STRIPE_KEY } from '$env/dynamic/private';
 
 import PocketBase from 'pocketbase';
 
