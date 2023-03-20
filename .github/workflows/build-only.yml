@@ -3,10 +3,10 @@ name: Build and Push Docker Image
 env:
   PUBLIC_STRIPE_KEY: ${{secrets.PUBLIC_STRIPE_KEY}}
   SECRET_STRIPE_KEY: ${{secrets.SECRET_STRIPE_KEY}}
-  
+
 on:
-  push:
-    branches: [master]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build-and-push:
@@ -23,7 +23,5 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          push: true
+          push: false
           tags: ${{ secrets.APP_IMAGE }}
-      - name: Deploy on cap rover
-        run: docker run caprover/cli-caprover:latest caprover deploy --caproverUrl "${{ secrets.APP_URL }}" --appToken "${{ secrets.APP_TOKEN }}" --caproverApp "${{ secrets.APP_NAME }}" --imageName "${{ secrets.APP_IMAGE }}"
