@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { loadStripe } from '@stripe/stripe-js';
-	import { PUBLIC_STRIPE_KEY } from '$env/dynamic/public';
+	import { PUBLIC_STRIPE_KEY } from '$env/static/public';
 	import { Elements, PaymentElement, LinkAuthenticationElement, Address } from '/src/lib';
 	import Header from '../Components/Header.svelte';
 	import { api_origin } from '../../utils/const';
