@@ -1647,10 +1647,10 @@ pkg-types@^1.0.2:
     mlly "^1.1.1"
     pathe "^1.1.0"
 
-pocketbase@^0.10.1:
-  version "0.10.2"
-  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.10.2.tgz#ef0cf1215f56f0dc80dece6540b740547f7bb57f"
-  integrity sha512-728aVaPLhSwOyEqZ4+GJfqg1SHUAyokvErsOksxauvOXiRE/QSCn8s6bW1/KyU3NGqz248eBjUQY3aLwTV/CcA==
+pocketbase@^0.12.0:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.12.1.tgz#f3655ca9d8b28729401fc6b55552e4708d4a04ed"
+  integrity sha512-kihThVla/JontCGA2zVGuxk1vWtz/yt7FqnL241oxd+w7RBVNzLIRKN6GolnY9DGOekNmFRb57CL24sbUm4wJA==
 
 postcss-import@^14.1.0:
   version "14.1.0"
