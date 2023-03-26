@@ -1653,9 +1653,9 @@ pkg-types@^1.0.2:
     pathe "^1.1.0"
 
 pocketbase@^0.13.0:
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.13.0.tgz#6db7469ad2bb63288623814a2a1b397fc362c8f1"
-  integrity sha512-d0YH8/OPzQnyqsrrUpFJcPzY93rFFEl3RA0VJydxOBlO4OWgY20JzNXfDxl24vv/8RZXBzA8esIPbfQY6ZjdLw==
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.13.1.tgz#b6297148999f67d9b4b5eb86ebb5013ef9c55640"
+  integrity sha512-3Wsj87VcmvqmziWXdXWKyCDKbA3rfMR5wlP64UJj+7KBss4ZEXv3Z1ZXhLe5OOiFwF+ErbcO9bzWBMrVLfsIpQ==
 
 postcss-import@^14.1.0:
   version "14.1.0"
