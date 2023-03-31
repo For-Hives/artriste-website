@@ -280,9 +280,9 @@
     rollup "^3.7.0"
 
 "@sveltejs/kit@^1.5.0":
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.14.0.tgz#bb806b00471ec44b3c5e99aaa6bda48c8c640e80"
-  integrity sha512-4e/cZT0z4IppEkqNvMrurGz6VE1gScukFU7XqwTL/yrGJGXHqS9D7RvsOcE1hASsgrMu6w/fKTIhxT5oN0K1Jw==
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.15.0.tgz#76447d90874c073b31cf79cfe88f06b66b71154a"
+  integrity sha512-fvDsW9msxWjDU/j9wwLlxEZ6cpXQYcmcQHq7neJMqibMEl39gI1ztVymGnYqM8KLqZXwNmhKtLu8EPheukKtXQ==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^2.0.0"
     "@types/cookie" "^0.5.1"
@@ -299,14 +299,14 @@
     undici "5.21.0"
 
 "@sveltejs/vite-plugin-svelte@^2.0.0":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-2.0.3.tgz#3d276eab341638dd58691a3de610774e155a7578"
-  integrity sha512-o+cguBFdwIGtRbNkYOyqTM7KvRUffxh5bfK4oJsWKG2obu+v/cbpT03tJrGl58C7tRXo/aEC0/axN5FVHBj0nA==
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-2.0.4.tgz#607b6abe15e02e540249e3f47d47fb9f15952e80"
+  integrity sha512-pjqhW00KwK2uzDGEr+yJBwut+D+4XfJO/+bHHdHzPRXn9+1Jeq5JcFHyrUiYaXgHtyhX0RsllCTm4ssAx4ZY7Q==
   dependencies:
     debug "^4.3.4"
-    deepmerge "^4.3.0"
+    deepmerge "^4.3.1"
     kleur "^4.1.5"
-    magic-string "^0.29.0"
+    magic-string "^0.30.0"
     svelte-hmr "^0.15.1"
     vitefu "^0.2.4"
 
@@ -779,7 +779,7 @@ deep-is@^0.1.3:
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.4.tgz#a6f2dce612fadd2ef1f519b73551f17e85199831"
   integrity sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==
 
-deepmerge@^4.2.2, deepmerge@^4.3.0:
+deepmerge@^4.2.2, deepmerge@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.3.1.tgz#44b5f2147cd3b00d4b56137685966f26fd25dd4a"
   integrity sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==
@@ -1414,13 +1414,6 @@ magic-string@^0.27.0:
   version "0.27.0"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.27.0.tgz#e4a3413b4bab6d98d2becffd48b4a257effdbbf3"
   integrity sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==
-  dependencies:
-    "@jridgewell/sourcemap-codec" "^1.4.13"
-
-magic-string@^0.29.0:
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.29.0.tgz#f034f79f8c43dba4ae1730ffb5e8c4e084b16cf3"
-  integrity sha512-WcfidHrDjMY+eLjlU+8OvwREqHwpgCeKVBUpQ3OhYYuvfaYCUgcbuBzappNzZvg/v8onU3oQj+BYpkOJe9Iw4Q==
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.4.13"
 
