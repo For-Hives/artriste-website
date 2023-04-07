@@ -41,6 +41,6 @@
 		"dotenv": "^16.0.3",
 		"eventsource": "^2.0.2",
 		"pocketbase": "^0.13.0",
-		"stripe": "^11.12.0"
+		"stripe": "^12.0.0"
 	}
 }
