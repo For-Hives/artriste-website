@@ -1,22 +1,22 @@
 <script>
-	import { api_origin } from '/src/utils/const';
-	import { goto } from '$app/navigation';
-	import Header from '../../Components/Header.svelte';
+	import { api_origin } from '/src/utils/const'
+	import { goto } from '$app/navigation'
+	import Header from '../../Components/Header.svelte'
 
 	/** @type {import("./$types").PageData} */
-	export let data;
+	export let data
 
-	const oeuvre = data.oeuvre;
-	let processing = false;
+	const oeuvre = data.oeuvre
+	let processing = false
 
 	async function submit() {
 		// avoid processing duplicates
 
-		if (processing) return;
-		processing = true;
+		if (processing) return
+		processing = true
 
 		// payment succeeded, redirect to "thank you" page
-		goto('/checkout?oeuvre=' + oeuvre.id);
+		goto('/checkout?oeuvre=' + oeuvre.id)
 	}
 </script>
 
@@ -24,13 +24,18 @@
 
 <div class=" w-screen">
 	<div
-		class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
+		class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
 	>
 		<!-- Product image -->
 		<div class="mt-10 lg:col-start-1 lg:row-span-2 lg:mt-0 lg:self-center">
 			<div class="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg">
 				<img
-					src={api_origin + oeuvre.collectionId + '/' + oeuvre.id + '/' + oeuvre.image}
+					src={api_origin +
+						oeuvre.collectionId +
+						'/' +
+						oeuvre.id +
+						'/' +
+						oeuvre.image}
 					alt="image de l'oeuvre"
 					class="h-full w-full object-cover object-center"
 				/>
@@ -41,9 +46,15 @@
 		<div class="lg:max-w-lg lg:self-end">
 			<nav aria-label="Breadcrumb">
 				<ol class="flex items-center space-x-2">
-					<li v-for="(breadcrumb, breadcrumbIdx) in product.breadcrumbs" :key="breadcrumb.id">
+					<li
+						v-for="(breadcrumb, breadcrumbIdx) in product.breadcrumbs"
+						:key="breadcrumb.id"
+					>
 						<div class="flex items-center text-sm">
-							<a href="/galerie" class="font-large text-gray-500 hover:text-gray-300">Galerie</a>
+							<a
+								href="/galerie"
+								class="font-large text-gray-500 hover:text-gray-300">Galerie</a
+							>
 							<svg
 								v-if="breadcrumbIdx !== product.breadcrumbs.length - 1"
 								viewBox="0 0 20 20"
@@ -60,7 +71,9 @@
 			</nav>
 
 			<div class="mt-4">
-				<h1 class="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">{oeuvre.name}</h1>
+				<h1 class="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
+					{oeuvre.name}
+				</h1>
 			</div>
 
 			<section aria-labelledby="information-heading" class="mt-4">
@@ -87,7 +100,7 @@
 						<input
 							type="submit"
 							value="Acheter"
-							class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+							class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
 						/>
 					</div>
 				</form>

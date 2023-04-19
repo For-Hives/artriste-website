@@ -10,7 +10,9 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"prettier": "prettier --plugin-search-dir . --write .",
+		"prepare": "husky install"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "2.0.0",
@@ -41,6 +43,8 @@
 		"dotenv": "16.0.3",
 		"eventsource": "2.0.2",
 		"pocketbase": "0.14.0",
-		"stripe": "12.1.1"
+		"stripe": "12.1.1",
+		"husky": "8.0.3",
+		"prettier-plugin-tailwindcss": "0.2.7"
 	}
 }

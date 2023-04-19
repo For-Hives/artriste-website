@@ -1,58 +1,65 @@
 <script>
-	import { onMount, getContext, createEventDispatcher } from 'svelte';
-	import { mount } from './util.js';
+	import { onMount, getContext, createEventDispatcher } from 'svelte'
+	import { mount } from './util.js'
 
 	/** @type {import('@stripe/stripe-js').StripeElementClasses} */
-	export let classes = {};
+	export let classes = {}
 
 	/** @type {import('@stripe/stripe-js').StripeElementStyle} */
-	export let style = {};
+	export let style = {}
 
 	/** @type {string} */
-	export let placeholder = 'Card number';
+	export let placeholder = 'Card number'
 
 	/** @type {boolean?} */
-	export let disabled = false;
+	export let disabled = false
 
 	/** @type {boolean?} */
-	export let showIcon = true;
+	export let showIcon = true
 
 	/** @type {'default' | 'solid'} */
-	export let iconStyle = 'default';
+	export let iconStyle = 'default'
 
 	/** @type {import('@stripe/stripe-js').StripeElementBase?} */
-	export let element = null;
+	export let element = null
 
 	/** @type {HTMLElement?} */
-	let wrapper;
+	let wrapper
 
-	const dispatch = createEventDispatcher();
+	const dispatch = createEventDispatcher()
 
 	/** @type {import("./types.js").ElementsContext} */
-	const { elements } = getContext('stripe');
+	const { elements } = getContext('stripe')
 
 	onMount(() => {
-		const options = { classes, style, placeholder, disabled, showIcon, iconStyle };
+		const options = {
+			classes,
+			style,
+			placeholder,
+			disabled,
+			showIcon,
+			iconStyle,
+		}
 
-		element = mount(wrapper, 'cardNumber', elements, dispatch, options);
+		element = mount(wrapper, 'cardNumber', elements, dispatch, options)
 
-		return () => element.destroy();
-	});
+		return () => element.destroy()
+	})
 
 	export function blur() {
-		element.blur();
+		element.blur()
 	}
 
 	export function clear() {
-		element.clear();
+		element.clear()
 	}
 
 	export function destroy() {
-		element.destroy();
+		element.destroy()
 	}
 
 	export function focus() {
-		element.focus();
+		element.focus()
 	}
 </script>
 
