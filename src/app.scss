@@ -256,7 +256,7 @@ $letters: 'MERCI DE VOTRE COMMANDE !';
 @for $i from 0 through 24 {
   .special-animation .letter-#{$i} > div.letter {
     animation: 0.3s ease-in-out special-animation-fading forwards;
-    animation-delay: #{($i * 0.1)+1.5}s;
+    animation-delay: #{($i * 0.1)+2.2}s;
     position: relative;
   }
   .special-animation .letter-#{$i} .bubble {
@@ -272,10 +272,55 @@ $letters: 'MERCI DE VOTRE COMMANDE !';
     height: 30px;
     border-radius: 50%;
     // background depends on the number of letter hue / 25
-    background: hsl(calc(360 * #{$i} / 25), 80%, 50%);
+    background: hsl(calc(360 * #{$i} / 25), 50%, 30%);
     transform: translate(-50%, -50%);
     animation: 1.5s ease-in-out special-animation-undisplay forwards;
     animation-delay: #{$i * 0.1}s;
+  }
+
+  //  for each letter, make appear the 12 particles that are in bubble-container , particle, particle-$j
+  @for $j from 1 through 12 {
+    .special-animation .letter-#{$i} .bubble-container .particle .particle-#{$j} {
+      //animation: 1s ease-in-out special-animation-fading forwards;
+      //animation-delay: #{($i * 0.1)}s;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .special-animation .letter-#{$i} .bubble-container .particle .particle-#{$j}:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      // background depends on the number of letter hue / 25
+      background: hsl(calc(360 * #{$i} / 25), 50%, 30%);
+      transform: translate(-50%, -50%);
+    }
+
+    .special-animation .letter-#{$i} .bubble-container .particle .particle-#{$j} {
+      animation: 1.5s ease-in-out special-animation-particle-#{$j} forwards;
+      animation-delay: #{($i * 0.1)+2}s;
+      opacity: 0;
+      transform-origin: top;
+      top: 0 !important;
+      left: 50% !important;
+    }
+
+    //  for each particle make the particle move in a circle direction ( 360 / 12 = 30°)
+    @keyframes special-animation-particle-#{$j} {
+      0% {
+        opacity: 1;
+        transform: translateX(-100px) rotate(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(50px) translateX(500px) rotate(calc(#{$j * (360 / 12)}deg));
+      }
+    }
   }
 }
 

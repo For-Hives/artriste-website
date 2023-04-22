@@ -10,11 +10,19 @@
 			letters[index] = '&nbsp;'
 		}
 	})
+
+	const title_mobile = 'MERCI !'
+	// 	title to array of letters
+	const letters_mobile = title_mobile.split('')
+	// if letter is a space, replace with a non-breaking space
+	letters_mobile.forEach((letter, index) => {
+		if (letter === ' ') {
+			letters_mobile[index] = '&nbsp;'
+		}
+	})
 </script>
 
-<Header />
-
-<div class='relative flex min-h-[calc(100vh-100px)] w-screen items-center justify-center'>
+<div class='relative flex min-h-screen w-screen items-center justify-center overflow-hidden'>
 	<div
 		class='rotate-30 absolute left-0 top-0 -z-10 h-screen w-screen -translate-x-1/2 -translate-y-1/3 select-none opacity-5'
 	>
@@ -30,8 +38,8 @@
 			/>
 		</svg>
 	</div>
-	<div class='col-span-12 mx-5 flex items-center justify-center sm:mx-0'>
-		<h1 class='[&>*]:text-7xl tracking-widest special-animation flex gap-3'>
+	<div class='hidden xl:block col-span-12 mx-5 flex items-center justify-center sm:mx-0'>
+		<h1 class='lg:[&>*]:text-7xl tracking-widest special-animation flex gap-3'>
 			{#each letters as letter, i}
 				<div class='letter-{i} flex justify-center items-center w-[35px] relative'>
 					<div class='letter'>
@@ -39,9 +47,43 @@
 					</div>
 					<div class='bubble-container absolute top-0 left-0 w-full h-full flex justify-center items-center'>
 						<div class='bubble w-full h-full relative'></div>
+
+						{#each [...Array(13).keys()] as particle, y}
+							<div class='particle w-full h-full absolute top-0 left-0 flex justify-center items-center'>
+								<div class='particle-{y}'>
+
+								</div>
+							</div>
+						{/each}
 					</div>
+
 				</div>
 			{/each}
 		</h1>
 	</div>
+
+	<div class='block xl:hidden col-span-12 mx-5 flex items-center justify-center sm:mx-0'>
+		<h1 class='[&>*]:text-xl tracking-widest special-animation flex gap-3'>
+			{#each letters_mobile as letter, i}
+				<div class='letter-{i} flex justify-center items-center w-[15px] relative'>
+					<div class='letter'>
+						{@html letter}
+					</div>
+					<div class='bubble-container absolute top-0 left-0 w-full h-full flex justify-center items-center'>
+						<div class='bubble w-full h-full relative'></div>
+
+						{#each [...Array(13).keys()] as particle, y}
+							<div class='particle w-full h-full absolute top-0 left-0 flex justify-center items-center'>
+								<div class='particle-{y}'>
+
+								</div>
+							</div>
+						{/each}
+					</div>
+
+				</div>
+			{/each}
+		</h1>
+	</div>
+
 </div>
