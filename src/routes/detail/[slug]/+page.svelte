@@ -39,10 +39,10 @@
 		</svg>
 	</div>
 	<div
-		class="relative mx-auto max-w-2xl py-12 lg:grid lg:max-w-7xl lg:grid-cols-12 lg:gap-20"
+		class="relative mx-auto p-5 sm:m-auto sm:max-w-2xl py-12 pt-36 2xl:pt-12 grid lg:max-w-7xl lg:grid-cols-12 gap-10 2xl:gap-20"
 	>
 		<!-- Breadcrumbs -->
-		<div class="col-span-12 col-span-3 flex items-center justify-start">
+		<div class="col-span-12 flex items-center justify-start">
 			<nav aria-label="Breadcrumb" class="">
 				<ol class="flex items-center space-x-2">
 					<li
@@ -72,7 +72,7 @@
 			</nav>
 		</div>
 
-		<div class="relative col-span-12 grid lg:grid-cols-12 lg:gap-20">
+		<div class="relative col-span-12 grid lg:grid-cols-12 gap-20">
 			<!--		Buy now btn -->
 			<section
 				aria-labelledby="options-heading"
@@ -106,7 +106,7 @@
 			</div>
 
 			<!-- Product details -->
-			<div class="col-span-6 mt-8 flex flex-col justify-center gap-8">
+			<div class="col-span-6 mt-0 lg:mt-8 flex flex-col justify-center gap-8">
 				<section aria-labelledby="information-heading" class="">
 					<div class="flex items-center">
 						<div class="flex h-[20px] w-[20px] items-center justify-center">
@@ -144,7 +144,7 @@
 						Informations supplémentaires
 					</h3>
 					<div class="prose prose-sm mt-4 text-gray-500">
-						<ul role="list" class="flex flex-col gap-2">
+						<ul role="list" class="flex flex-col gap-2 pb-10 sm:pb-0">
 							{#each product_infos as product_info}
 								<li class="ml-4 text-sm">→ {product_info}</li>
 							{/each}
@@ -155,11 +155,11 @@
 		</div>
 
 		<!-- Product form (description) -->
-		<div class="col-span-12">
+		<div class="col-span-12 m-10 mx-0 sm:m-10 lg:m-20 2xl:m-0 ">
 			<div class="flex flex-col gap-8">
 				<div class="relative">
 					<div
-						class="absolute left-0 top-0 h-[100px] w-[100px] -translate-x-[50px] -translate-y-[50px] transform text-white opacity-25"
+						class="absolute left-0 top-0 h-[100px] w-[100px] sm:-translate-x-[50px] -translate-y-[50px] transform text-white opacity-25"
 					>
 						<svg
 							version="1.1"
@@ -201,7 +201,7 @@
 						{@html oeuvre.description}
 					</p>
 					<div
-						class="absolute bottom-0 right-0 h-[100px] w-[100px] translate-x-[50px] translate-y-[50px] -scale-x-100 transform text-white opacity-25"
+						class="absolute bottom-0 right-0 h-[100px] w-[100px] sm:translate-x-[50px] translate-y-[50px] -scale-x-100 transform text-white opacity-25"
 					>
 						<svg
 							version="1.1"
