@@ -72,7 +72,9 @@
 			</nav>
 		</div>
 
-		<div class="relative col-span-12 flex flex-col sm:grid gap-20 mx-5 sm:mx-0 lg:grid-cols-12">
+		<div
+			class="relative col-span-12 mx-5 flex flex-col gap-20 sm:mx-0 sm:grid lg:grid-cols-12"
+		>
 			<!--		Buy now btn -->
 			<section
 				aria-labelledby="options-heading"
@@ -106,7 +108,7 @@
 			</div>
 
 			<!-- Product details -->
-			<div class="col-span-6 mt-0 flex flex-col justify-center gap-8 lg:mt-8 ">
+			<div class="col-span-6 mt-0 flex flex-col justify-center gap-8 lg:mt-8">
 				<section aria-labelledby="information-heading" class="">
 					<div class="flex items-center">
 						<div class="flex h-[20px] w-[20px] items-center justify-center">
