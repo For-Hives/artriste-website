@@ -255,13 +255,13 @@ $letters: 'MERCI DE VOTRE COMMANDE !';
 
 @for $i from 0 through 24 {
   .special-animation .letter-#{$i} > div.letter {
-    animation: 1s ease-in-out special-animation forwards;
-    animation-delay: #{$i * 0.1}s;
+    animation: 0.3s ease-in-out special-animation-fading forwards;
+    animation-delay: #{($i * 0.1)+1.5}s;
     position: relative;
   }
   .special-animation .letter-#{$i} .bubble {
     animation: 1s ease-in-out special-animation forwards;
-    animation-delay: #{$i * 0.1}s;
+    animation-delay: #{($i * 0.1)}s;
   }
   .special-animation .letter-#{$i} .bubble:after {
     content: '';
@@ -274,7 +274,7 @@ $letters: 'MERCI DE VOTRE COMMANDE !';
     // background depends on the number of letter hue / 25
     background: hsl(calc(360 * #{$i} / 25), 80%, 50%);
     transform: translate(-50%, -50%);
-    animation: 4s ease-in-out special-animation-undisplay forwards;
+    animation: 1.5s ease-in-out special-animation-undisplay forwards;
     animation-delay: #{$i * 0.1}s;
   }
 }
@@ -290,11 +290,20 @@ $letters: 'MERCI DE VOTRE COMMANDE !';
   }
 }
 
-@keyframes special-animation-undisplay {
+@keyframes special-animation-fading {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes special-animation-undisplay {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
