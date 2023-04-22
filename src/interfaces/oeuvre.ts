@@ -10,4 +10,4 @@ export type Oeuvre = {
 	collectionName: string
 	created: string
 	updated: string
-} // end of interface
+}
