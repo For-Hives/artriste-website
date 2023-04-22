@@ -39,10 +39,10 @@
 		</svg>
 	</div>
 	<div
-		class="mx-auto max-w-2xl py-12 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-12"
+		class="relative mx-auto max-w-2xl py-12 lg:grid lg:max-w-7xl lg:grid-cols-12 lg:gap-20"
 	>
 		<!-- Breadcrumbs -->
-		<div class="col-span-3 flex items-center justify-start">
+		<div class="col-span-12 col-span-3 flex items-center justify-start">
 			<nav aria-label="Breadcrumb" class="">
 				<ol class="flex items-center space-x-2">
 					<li
@@ -71,81 +71,91 @@
 				</ol>
 			</nav>
 		</div>
-		<!-- Product details -->
-		<div class="mt-8 flex flex-col justify-center gap-8">
-			<section aria-labelledby="information-heading" class="">
-				<div class="flex items-center">
-					<div class="flex h-[20px] w-[20px] items-center justify-center">
-						<svg
-							height="512"
-							viewBox="0 0 520 520"
-							width="512"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<g id="_15-Checked" data-name="15-Checked">
-								<path
-									d="m210.516 424.937-2.239-3.815c-34.2-58.27-125.082-181.928-126-183.17l-1.311-1.781 30.963-30.6 98.012 68.439c61.711-80.079 119.283-135.081 156.837-167.2 41.081-35.135 67.822-51.31 68.092-51.465l.608-.364h52.522l-5.017 4.468c-129.029 114.926-268.883 359.19-270.276 361.644z"
-									fill="#fff"
-								/>
-							</g>
-						</svg>
-					</div>
-					<div class="flex items-center">
-						<p class="ml-2 text-sm text-gray-400">En stock</p>
-					</div>
-				</div>
-			</section>
-			<div class="relative">
-				<h1 class="tracking-loose text-3xl font-medium text-white sm:text-7xl">
-					{oeuvre.name}
-				</h1>
-			</div>
-			<div class="flex items-center justify-start">
-				<h3 class="text-3xl">{oeuvre.price} €</h3>
-			</div>
-			<div class="border-b border-t border-gray-200/30 py-10">
-				<h3 class="text-3xl font-medium text-gray-50">
-					Informations supplémentaires
-				</h3>
-				<div class="prose prose-sm mt-4 text-gray-500">
-					<ul role="list" class="flex flex-col gap-2">
-						{#each product_infos as product_info}
-							<li class="ml-4 text-sm">→ {product_info}</li>
-						{/each}
-					</ul>
-				</div>
-			</div>
-		</div>
 
-		<!-- Product image -->
-		<div class="lg:mt-0 lg:self-center">
-			<div class="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg">
-				<img
-					src={api_origin +
-						oeuvre.collectionId +
-						'/' +
-						oeuvre.id +
-						'/' +
-						oeuvre.image}
-					alt="image de l'oeuvre"
-					class="h-full w-full object-cover object-center"
-				/>
-			</div>
-			<section aria-labelledby="options-heading">
+		<div class="relative col-span-12 grid lg:grid-cols-12 lg:gap-20">
+			<!--		Buy now btn -->
+			<section
+				aria-labelledby="options-heading"
+				class="absolute bottom-0 right-0"
+			>
 				<form on:submit|preventDefault={submit}>
 					<div class="mt-5 flex items-center justify-between">
 						<input
 							type="submit"
 							value="Acheter"
-							class="hover: flex w-full items-center justify-center rounded-md border-2 border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+							class="hover: flex items-center justify-center rounded-md border-2 border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
 						/>
 					</div>
 				</form>
 			</section>
+
+			<!-- Product image -->
+			<div class="col-span-6 lg:mt-0 lg:self-center">
+				<div class="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg">
+					<img
+						src={api_origin +
+							oeuvre.collectionId +
+							'/' +
+							oeuvre.id +
+							'/' +
+							oeuvre.image}
+						alt="image de l'oeuvre"
+						class="h-full w-full object-cover object-center"
+					/>
+				</div>
+			</div>
+
+			<!-- Product details -->
+			<div class="col-span-6 mt-8 flex flex-col justify-center gap-8">
+				<section aria-labelledby="information-heading" class="">
+					<div class="flex items-center">
+						<div class="flex h-[20px] w-[20px] items-center justify-center">
+							<svg
+								height="512"
+								viewBox="0 0 520 520"
+								width="512"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<g id="_15-Checked" data-name="15-Checked">
+									<path
+										d="m210.516 424.937-2.239-3.815c-34.2-58.27-125.082-181.928-126-183.17l-1.311-1.781 30.963-30.6 98.012 68.439c61.711-80.079 119.283-135.081 156.837-167.2 41.081-35.135 67.822-51.31 68.092-51.465l.608-.364h52.522l-5.017 4.468c-129.029 114.926-268.883 359.19-270.276 361.644z"
+										fill="#fff"
+									/>
+								</g>
+							</svg>
+						</div>
+						<div class="flex items-center">
+							<p class="ml-2 text-sm text-gray-400">En stock</p>
+						</div>
+					</div>
+				</section>
+				<div class="relative">
+					<h1
+						class="tracking-loose text-3xl font-medium text-white sm:text-7xl"
+					>
+						{oeuvre.name}
+					</h1>
+				</div>
+				<div class="flex items-center justify-start">
+					<h3 class="text-3xl">{oeuvre.price} €</h3>
+				</div>
+				<div class="border-t border-gray-200/30 py-10">
+					<h3 class="text-3xl font-medium text-gray-50">
+						Informations supplémentaires
+					</h3>
+					<div class="prose prose-sm mt-4 text-gray-500">
+						<ul role="list" class="flex flex-col gap-2">
+							{#each product_infos as product_info}
+								<li class="ml-4 text-sm">→ {product_info}</li>
+							{/each}
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
 
-		<!-- Product form -->
-		<div class="">
+		<!-- Product form (description) -->
+		<div class="col-span-12">
 			<div class="flex flex-col gap-8">
 				<div class="relative">
 					<div
