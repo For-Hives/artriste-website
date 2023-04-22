@@ -157,7 +157,8 @@ nav * {
 
 /* -------------------------- Hero -------------------------- */
 .skew-circle {
-	transform: translateX(-50%) perspective(500px) rotateX(75deg) rotateY(20deg) scale(1.5);
+	transform: translateX(-50%) perspective(500px) rotateX(75deg) rotateY(20deg)
+		scale(1.5);
 	/*  animation between rotateY(-20deg) & rotateY(20deg) */
 	animation: 4s infinite alternate ease-in-out skew-circle;
 }
@@ -188,10 +189,12 @@ nav * {
 
 @keyframes skew-circle {
 	0% {
-		transform: translateX(-50%) perspective(500px) rotateX(75deg) rotateY(-5deg) scale(1.5);
+		transform: translateX(-50%) perspective(500px) rotateX(75deg) rotateY(-5deg)
+			scale(1.5);
 	}
 	100% {
-		transform: translateX(-50%) perspective(500px) rotateX(75deg) rotateY(5deg) scale(1.5);
+		transform: translateX(-50%) perspective(500px) rotateX(75deg) rotateY(5deg)
+			scale(1.5);
 	}
 }
 
@@ -201,19 +204,19 @@ nav * {
 
 @keyframes skew-circle-fade {
 	0% {
-		transform: translateY(0px) translateX(-50%) perspective(500px) rotateX(75deg) rotateY(0deg)
-			scale(1.5);
+		transform: translateY(0px) translateX(-50%) perspective(500px)
+			rotateX(75deg) rotateY(0deg) scale(1.5);
 		opacity: 1;
 	}
 	10% {
-		transform: translateY(150px) translateX(-50%) perspective(500px) rotateX(75deg) rotateY(0deg)
-			scale(1);
+		transform: translateY(150px) translateX(-50%) perspective(500px)
+			rotateX(75deg) rotateY(0deg) scale(1);
 		opacity: 1;
 	}
 
 	100% {
-		transform: translateY(0px) translateX(-50%) perspective(500px) rotateX(75deg) rotateY(-5deg)
-			scale(1.5);
+		transform: translateY(0px) translateX(-50%) perspective(500px)
+			rotateX(75deg) rotateY(-5deg) scale(1.5);
 		opacity: 1;
 	}
 }
@@ -235,4 +238,9 @@ nav * {
 	/* slate 50 */
 	color: rgb(248 250 252);
 	font-size: 36px;
+}
+
+/* input with submit type, cursor : pointer */
+input[type='submit'] {
+	cursor: pointer;
 }
