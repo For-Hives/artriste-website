@@ -39,10 +39,10 @@
 		</svg>
 	</div>
 	<div
-		class="relative mx-auto grid gap-10 p-5 py-12 pt-36 sm:m-auto sm:max-w-2xl lg:max-w-7xl lg:grid-cols-12 2xl:gap-20 2xl:pt-12"
+		class="relative mx-auto flex flex-col gap-10 p-0 py-12 pt-36 sm:m-auto sm:grid sm:max-w-2xl sm:p-5 sm:py-12 sm:pt-36 lg:max-w-7xl lg:grid-cols-12 2xl:gap-20 2xl:pt-12"
 	>
 		<!-- Breadcrumbs -->
-		<div class="col-span-12 flex items-center justify-start">
+		<div class="col-span-12 mx-5 flex items-center justify-start sm:mx-0">
 			<nav aria-label="Breadcrumb" class="">
 				<ol class="flex items-center space-x-2">
 					<li
@@ -72,7 +72,7 @@
 			</nav>
 		</div>
 
-		<div class="relative col-span-12 grid gap-20 lg:grid-cols-12">
+		<div class="relative col-span-12 flex flex-col sm:grid gap-20 mx-5 sm:mx-0 lg:grid-cols-12">
 			<!--		Buy now btn -->
 			<section
 				aria-labelledby="options-heading"
@@ -106,7 +106,7 @@
 			</div>
 
 			<!-- Product details -->
-			<div class="col-span-6 mt-0 flex flex-col justify-center gap-8 lg:mt-8">
+			<div class="col-span-6 mt-0 flex flex-col justify-center gap-8 lg:mt-8 ">
 				<section aria-labelledby="information-heading" class="">
 					<div class="flex items-center">
 						<div class="flex h-[20px] w-[20px] items-center justify-center">
@@ -155,7 +155,7 @@
 		</div>
 
 		<!-- Product form (description) -->
-		<div class="col-span-12 m-10 mx-0 sm:m-10 lg:m-20 2xl:m-0">
+		<div class="col-span-12 m-10 mx-5 sm:m-10 lg:m-20 2xl:m-0">
 			<div class="flex flex-col gap-8">
 				<div class="relative">
 					<div
