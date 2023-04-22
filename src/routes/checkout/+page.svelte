@@ -10,9 +10,9 @@
 		Address,
 	} from '/src/lib'
 	import Header from '../Components/Header.svelte'
-	import { api_origin } from '../../utils/const'
+	import { api_origin, product_infos } from '../../utils/const'
 
-	/** @type {import("../../../.svelte-kit/types/src/routes").PageData} */
+	/** @type {import('../../../.svelte-kit/types/src/routes').PageData} */
 	export let data
 
 	let stripe = null
@@ -52,8 +52,8 @@
 			elements,
 			redirect: 'if_required',
 		})
-		// log results, for debugging
-		console.log({ result })
+		// // log results, for debugging
+		// console.log({ result })
 		if (result.error) {
 			// payment failed, notify user
 			error = result.error
@@ -66,133 +66,115 @@
 </script>
 
 <Header />
-<!--  tailwind layout -->
-<div class="flex w-screen flex-col-reverse p-0 sm:flex-row">
-	<div class="flex w-full flex-col items-center justify-center">
-		<div
-			class="w-full space-y-6 rounded-md border-2 border-gray-300 bg-white px-4 py-6 shadow-md sm:w-1/2 sm:px-6 lg:px-8"
+
+<div class="relative flex min-h-[calc(100vh-100px)] w-screen items-center">
+	<div
+		class="rotate-30 absolute left-0 top-0 -z-10 h-screen w-screen -translate-x-1/2 -translate-y-1/3 select-none opacity-5"
+	>
+		<svg
+			height="512"
+			viewBox="0 0 24 24"
+			width="512"
+			xmlns="http://www.w3.org/2000/svg"
+			class="h-full w-full fill-current"
 		>
-			<div>
-				<h1 class="text-center text-3xl font-bold text-red-500">
-					Page de paiement
-				</h1>
-			</div>
-
-			{#if error}
-				<p class="error">{error.message} Please try again.</p>
-			{/if}
-			{#if stripe && clientSecret}
-				<Elements
-					{stripe}
-					{clientSecret}
-					theme="flat"
-					labels="floating"
-					variables={{ colorPrimary: '#7c4dff' }}
-					rules={{ '.Input': { border: 'solid 1px #0002' } }}
-					bind:elements
-				>
-					<form on:submit|preventDefault={submit}>
-						<LinkAuthenticationElement />
-						<PaymentElement />
-						<Address mode="billing" />
-
-						<!--                        beatifull tailwind pay button -->
-						<button
-							disabled={processing}
-							class="my-4 w-full rounded bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-700"
-						>
-							{#if processing}
-								Processing...
-							{:else}
-								Pay
-							{/if}
-						</button>
-					</form>
-				</Elements>
-			{:else}
-				Loading...
-			{/if}
-		</div>
+			<path
+				d="m5 3a2 2 0 1 1 -2-2 2 2 0 0 1 2 2zm-2 7a1 1 0 1 0 -1-1 1 1 0 0 0 1 1zm0 6a1 1 0 1 0 -1-1 1 1 0 0 0 1 1zm0 3a2 2 0 1 0 2 2 2 2 0 0 0 -2-2zm6-18a2 2 0 1 0 2 2 2 2 0 0 0 -2-2zm1 8a1 1 0 1 0 -1 1 1 1 0 0 0 1-1zm-1 4a2 2 0 1 0 2 2 2 2 0 0 0 -2-2zm0 7a1 1 0 1 0 1 1 1 1 0 0 0 -1-1zm6-16a1 1 0 1 0 -1-1 1 1 0 0 0 1 1zm0 3a2 2 0 1 0 2 2 2 2 0 0 0 -2-2zm1 8a1 1 0 1 0 -1 1 1 1 0 0 0 1-1zm-1 4a2 2 0 1 0 2 2 2 2 0 0 0 -2-2zm6-14a2 2 0 1 0 -2-2 2 2 0 0 0 2 2zm-1 4a1 1 0 1 0 1-1 1 1 0 0 0 -1 1zm1 4a2 2 0 1 0 2 2 2 2 0 0 0 -2-2zm0 7a1 1 0 1 0 1 1 1 1 0 0 0 -1-1z"
+			/>
+		</svg>
 	</div>
 	<div
-		class=" flex h-screen w-full flex-col items-center justify-center sm:h-fit"
+		class="relative mx-auto flex flex-col gap-10 p-0 py-12 pt-36 sm:m-auto sm:grid sm:max-w-2xl sm:p-5 sm:py-12 sm:pt-36 lg:max-w-7xl lg:grid-cols-12 2xl:gap-10 2xl:pt-12"
 	>
-		{#if data.oeuvre}
-			<!--        tailwind image centered -->
-
-			<p class="py-3 font-bold">{data.oeuvre.name}</p>
-
-			<img
-				src={api_origin +
-					data.oeuvre.collectionId +
-					'/' +
-					data.oeuvre.id +
-					'/' +
-					data.oeuvre.image}
-				alt="image de l'oeuvre"
-				class="  w-3/4 rounded-2xl object-cover object-center"
-			/>
-
-			<div class="flex flex-col items-baseline py-4">
-				<p>- poster de oeuvre</p>
-				<p>- certificat d'authenticité</p>
-			</div>
-
-			<!--            arrow to scroll down -->
-			<div class="my-4 flex flex-col items-center sm:hidden">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-6 w-6 animate-bounce"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="white"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						d="M19 14l-7 7m0 0l-7-7m7 7V3"
+		<div
+			class="relative col-span-12 mx-5 flex flex-col gap-20 sm:mx-0 sm:grid lg:grid-cols-12"
+		>
+			<!-- Product image -->
+			<div class="col-span-6 lg:mt-0 lg:self-start">
+				<div class="relative mb-8 flex items-center justify-between">
+					<h1
+						class="tracking-loose text-3xl font-medium text-white sm:text-7xl"
+					>
+						{data.oeuvre.name}
+					</h1>
+					<h3 class="text-3xl">{data.oeuvre.price} €</h3>
+				</div>
+				<div class="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg">
+					<img
+						src={api_origin +
+							data.oeuvre.collectionId +
+							'/' +
+							data.oeuvre.id +
+							'/' +
+							data.oeuvre.image}
+						alt="image de l'oeuvre"
+						class="h-full w-full object-cover object-center"
 					/>
-				</svg>
+				</div>
+				<div class="mt-8 flex items-center justify-start" />
 			</div>
-		{/if}
+
+			<!-- Product details -->
+			<div class="col-span-6 mt-0 flex flex-col justify-center gap-8 lg:mt-8">
+				<div class="flex w-full flex-col items-center justify-center">
+					<div
+						class="w-full space-y-6 rounded-md bg-white px-4 py-6 shadow-md shadow-xl sm:px-6 lg:px-8"
+					>
+						{#if error}
+							<p class="error text-gray-700">
+								{error.message} Please try again.
+							</p>
+						{/if}
+						{#if stripe && clientSecret}
+							<Elements
+								{stripe}
+								{clientSecret}
+								theme="flat"
+								labels="floating"
+								variables={{ colorPrimary: '#4338CA' }}
+								rules={{ '.Input': { border: 'solid 1px #0002' } }}
+								bind:elements
+							>
+								<form on:submit|preventDefault={submit}>
+									<LinkAuthenticationElement />
+									<PaymentElement />
+									<Address mode="billing" />
+
+									<!-- beatifull tailwind pay button -->
+									<button
+										disabled={processing}
+										class="my-4 w-full rounded bg-indigo-700 px-4 py-2 font-semibold text-white hover:bg-indigo-900"
+									>
+										{#if processing}
+											Chargement...
+										{:else}
+											Payer
+										{/if}
+									</button>
+								</form>
+							</Elements>
+						{:else}
+							<span class="text-gray-700"> Loading... </span>
+						{/if}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Product details -->
+		<div class="col-span-12 mt-0 flex flex-col justify-center gap-8">
+			<div>
+				<h3 class="text-3xl font-medium text-gray-50">
+					Informations supplémentaires
+				</h3>
+				<div class="prose prose-sm mt-4 text-gray-500">
+					<ul role="list" class="flex flex-col gap-2 pb-10 sm:pb-0">
+						{#each product_infos as product_info}
+							<li class="ml-4 text-sm">→ {product_info}</li>
+						{/each}
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
-<!--<h1 class="text-3xl font-bold text-center">-->
-<!--    Page de paiement</h1>-->
-
-<!--{#if data.oeuvre}-->
-<!--    <p> OEUVRE : {data.oeuvre.name}</p>-->
-<!--{/if}-->
-
-<!--{#if error}-->
-<!--    <p class="error">{error.message} Please try again.</p>-->
-<!--{/if}-->
-
-<!--{#if stripe && clientSecret}-->
-<!--    <Elements-->
-<!--            {stripe}-->
-<!--            {clientSecret}-->
-<!--            theme="flat"-->
-<!--            labels="floating"-->
-<!--            variables={{ colorPrimary: '#7c4dff' }}-->
-<!--            rules={{ '.Input': { border: 'solid 1px #0002' } }}-->
-<!--            bind:elements-->
-<!--    >-->
-<!--        <form on:submit|preventDefault={submit}>-->
-<!--            <LinkAuthenticationElement/>-->
-<!--            <PaymentElement/>-->
-<!--            <Address mode="billing"/>-->
-
-<!--            <button disabled={processing}>-->
-<!--                {#if processing}-->
-<!--                    Processing...-->
-<!--                {:else}-->
-<!--                    Pay-->
-<!--                {/if}-->
-<!--            </button>-->
-<!--        </form>-->
-<!--    </Elements>-->
-<!--{:else}-->
-<!--    Loading...-->
-<!--{/if}-->

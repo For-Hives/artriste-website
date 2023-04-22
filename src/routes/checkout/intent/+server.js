@@ -19,16 +19,8 @@ export async function POST({ request }) {
 		amount: data.amount * 100,
 		currency: data.currency,
 		description: data.description,
-		automatic_payment_methods: {
-			enabled: true,
-		},
+		payment_method_types: ['card'],
 	})
-
-	// todo : update oeuvre to sold
-	//
-	// const record = await pb.collection('oeuvre').update(data.id, {
-	//     "sold": true
-	// });
 
 	return json({
 		clientSecret: paymentIntent.client_secret,
