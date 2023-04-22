@@ -162,7 +162,9 @@
 		</div>
 
 		<!-- Product details -->
-		<div class="col-span-12 mx-5 sm:mx-0 mt-0 flex flex-col justify-center gap-8">
+		<div
+			class="col-span-12 mx-5 mt-0 flex flex-col justify-center gap-8 sm:mx-0"
+		>
 			<div>
 				<h3 class="text-3xl font-medium text-gray-50">
 					Informations supplémentaires
