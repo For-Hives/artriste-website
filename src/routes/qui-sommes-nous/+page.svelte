@@ -41,7 +41,7 @@
 		<p class="text-md xs:text-lg">
 			Nous sommes ravis de vous accueillir dans notre communauté d'artistes et
 			d'artisans passionnés. Découvrez nos créations uniques et exprimez votre
-			propre personnalité à travers l'art.
+			propre personnalité à travers l'art. ❤️
 		</p>
 	</div>
 	<div class="flex flex w-full items-center justify-center lg:w-1/2">
