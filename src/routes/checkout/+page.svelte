@@ -121,7 +121,7 @@
 						class="w-full space-y-6 rounded-md bg-white px-4 py-6 shadow-md shadow-xl sm:px-6 lg:px-8"
 					>
 						{#if error}
-							<p class="error text-gray-700">
+							<p class="error font-semibold text-gray-500">
 								{error.message} Please try again.
 							</p>
 						{/if}
@@ -154,7 +154,7 @@
 								</form>
 							</Elements>
 						{:else}
-							<span class="text-gray-700"> Loading... </span>
+							<span class="font-semibold text-gray-500"> Loading... </span>
 						{/if}
 					</div>
 				</div>
