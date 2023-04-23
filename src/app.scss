@@ -318,7 +318,7 @@ $letters: 'MERCI DE VOTRE COMMANDE !';
       }
       100% {
         opacity: 0;
-        transform: translateY(50px) translateX(500px) rotate(calc(#{$j * (360 / 12)}deg));
+        transform: translateY(50px) translateX(500px) rotate(calc(#{$j * 30}deg));
       }
     }
   }
