@@ -1,6 +1,6 @@
 export const prerender = true
 
-import '../app.css'
+import '../app.scss'
 import { oeuvres } from '../utils/store'
 import PocketBase from 'pocketbase'
 import type { Oeuvre } from '../interfaces/oeuvre'
