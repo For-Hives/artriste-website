@@ -303,10 +303,10 @@
     "@rollup/plugin-node-resolve" "^15.0.1"
     rollup "^3.7.0"
 
-"@sveltejs/kit@1.15.10":
-  version "1.15.10"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.15.10.tgz#d92b058d32652907a2a85d0c970a405910db7257"
-  integrity sha512-qRZxODfsixjgY+7OOxhAQB8viVaxjyDUz2lM6cE22kObzF5mNke81FIxB2wdaOX42LyfVwIYULZQSr7duxLZ7w==
+"@sveltejs/kit@1.15.11":
+  version "1.15.11"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.15.11.tgz#3599c1d5490d89896456bac02d876423ad93263e"
+  integrity sha512-AKE53iwWF59sreNGbKr8xYkv7l/NojgILlqgIwZ2UmKLMHditAThQ9Q1MR8EVw4ul9X56vnUOOSBv0Zqt69ZPQ==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^2.1.1"
     "@types/cookie" "^0.5.1"
