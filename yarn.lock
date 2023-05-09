@@ -1945,10 +1945,10 @@ pkg-types@^1.0.2:
     mlly "^1.1.1"
     pathe "^1.1.0"
 
-pocketbase@0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.14.0.tgz#0788d0f537b2e9f4c4f72aeb73a9fc4cba397bda"
-  integrity sha512-4y8kZkGQh4NJkuy/LntUBbFAplz655/5/+XYKetSwj6MYMo3N3zWFno+HxzmL59njsauwGsiNEWggbEETm1+WA==
+pocketbase@0.14.4:
+  version "0.14.4"
+  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.14.4.tgz#d661e25a2accb80700537fe43d97fa9b471f3803"
+  integrity sha512-FZJmZ7+tRJ6ShK9h8nZJNSPVfDIR1gukqcAjrzc7IS2zgK4PdBv7wwIJtCRdYYBxHMNAvU1uFkpQ0sWE094wuw==
 
 postcss-import@^15.1.0:
   version "15.1.0"
