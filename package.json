@@ -49,7 +49,7 @@
 		"@headlessui/vue": "1.7.14",
 		"@heroicons/vue": "2.0.18",
 		"@stripe/stripe-js": "1.54.0",
-		"dotenv": "16.1.4",
+		"dotenv": "16.2.0",
 		"eventsource": "2.0.2",
 		"pocketbase": "0.14.4",
 		"prettier-plugin-tailwindcss": "0.2.8",
