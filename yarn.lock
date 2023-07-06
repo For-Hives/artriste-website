@@ -2352,10 +2352,10 @@ strip-literal@^1.0.1:
   dependencies:
     acorn "^8.8.2"
 
-stripe@12.11.0:
-  version "12.11.0"
-  resolved "https://registry.yarnpkg.com/stripe/-/stripe-12.11.0.tgz#a074f17bbc79f81375a1d56a5dc65cdbc882a222"
-  integrity sha512-nyVumI9TXqr+B32397lLHF8VPbTWNvCF/rdY6oLXHLZr+7S8q2PJzo2TUvfowD0eSNz5Hz0O0I2kw9Qb2EyGQA==
+stripe@12.12.0:
+  version "12.12.0"
+  resolved "https://registry.yarnpkg.com/stripe/-/stripe-12.12.0.tgz#29d38a893133e36810cff668002103426258ae2f"
+  integrity sha512-aM9xfyDryiaf/qSWMtJaTMrlc/he3qyx3aVHMqOZqUiMdgTV6lt7tLpFrU0pG+QURm1LAP9GYZ+EcA17446YoQ==
   dependencies:
     "@types/node" ">=8.1.0"
     qs "^6.11.0"
