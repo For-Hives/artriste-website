@@ -51,7 +51,7 @@
 		"@stripe/stripe-js": "1.54.1",
 		"dotenv": "16.3.1",
 		"eventsource": "2.0.2",
-		"pocketbase": "0.14.4",
+		"pocketbase": "0.15.2",
 		"prettier-plugin-tailwindcss": "0.3.0",
 		"stripe": "12.12.0"
 	}
