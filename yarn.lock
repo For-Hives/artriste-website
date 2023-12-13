@@ -508,10 +508,10 @@
     "@rollup/plugin-node-resolve" "^15.0.1"
     rollup "^3.7.0"
 
-"@sveltejs/kit@1.30.1":
-  version "1.30.1"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.30.1.tgz#e2f3ee5965480ff969e6f8e6d1af3409f69fabdf"
-  integrity sha512-N4hMFTRmnkB0q1uB93wfM8As2q4zYI2FQ01K8dQOCAWbm2y6mB0pmF12ILO+zbEim13csBLO0JyAWJRSd101hQ==
+"@sveltejs/kit@1.30.2":
+  version "1.30.2"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.30.2.tgz#65959616919850a1bc9d1e6aa93faf324e34eefe"
+  integrity sha512-+Sc9K2XklJMKG5K++MTl3fZpCE7uuEQs2Yk82RQHdVxfEe69j1QWuK3w+7qx2ILHiBQpwtQVxtjiQMxgSlGm5g==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^2.5.0"
     "@types/cookie" "^0.5.1"
