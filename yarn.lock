@@ -2205,10 +2205,10 @@ pkg-types@^1.0.3:
     mlly "^1.2.0"
     pathe "^1.1.0"
 
-pocketbase@0.20.1:
-  version "0.20.1"
-  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.20.1.tgz#e34a0113306322f9382a8b775de3b83f7304929f"
-  integrity sha512-Gl51UBc1U03JlwmwMkUIa1OHbcTmmdhyMPV1aJyHp9HuY5VUlh0t4hcx6D1fdhYsJcoh3kc6mpwhTBfXDoyn8w==
+pocketbase@0.20.2:
+  version "0.20.2"
+  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.20.2.tgz#d8dd21c88cb43ac898adbbf31ad0624a673b6f61"
+  integrity sha512-gao4DzgQJXhbnWf+iOU/iPjquRqyQeD8l6W8t/foHdiI2rbduYh372IZ7enDbhCtgapSKYpO5TeZFGjwoW6mLA==
 
 postcss-import@^15.1.0:
   version "15.1.0"
