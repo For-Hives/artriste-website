@@ -464,10 +464,10 @@
   dependencies:
     import-meta-resolve "^4.0.0"
 
-"@sveltejs/adapter-node@2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-node/-/adapter-node-2.1.1.tgz#ed36cc46b1ac082797ecbfc654f89229231a8574"
-  integrity sha512-ypAqdvjoyfOEgucDbY3P6DM6nLEQ7OwiWMfyITKF8svffe9FIx1ow6uELJd1BzbCrouYndkQfc5m6ihj0xxqTg==
+"@sveltejs/adapter-node@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-node/-/adapter-node-3.0.0.tgz#639ac5a26a6ed8efee14ed88a1bb4bab81abccb1"
+  integrity sha512-+nmnMhgWB0c1C2kLcWXp/r1zmY22ayhO8zD2oyxy4VUHYPOKt1uEmFVvLCzF7jg5aYlTtstjmrzNdP2l0MiLoQ==
   dependencies:
     "@rollup/plugin-commonjs" "^25.0.7"
     "@rollup/plugin-json" "^6.1.0"
