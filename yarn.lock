@@ -2607,10 +2607,10 @@ strip-literal@^2.0.0:
   dependencies:
     js-tokens "^8.0.2"
 
-stripe@14.18.0:
-  version "14.18.0"
-  resolved "https://registry.yarnpkg.com/stripe/-/stripe-14.18.0.tgz#71f6d192c322418bd0962897006b0f47e232f94c"
-  integrity sha512-yLqKPqYgGJbMxrQiE4+i2i00ZVA2NRIZbZ1rejzj5XR3F3Uc+1iy9QE133knZudhVGMw367b8vTpB8D9pYMETw==
+stripe@14.19.0:
+  version "14.19.0"
+  resolved "https://registry.yarnpkg.com/stripe/-/stripe-14.19.0.tgz#d254024620a61029fbf50667205f720844645d78"
+  integrity sha512-Je2USTpUib3hApIgoHXViLoYkDLp+AXdUJvJ6aMQ/AcvZK1PcC7N8nTceh+0gpdotX8izlWN4QyVdMcptubHBQ==
   dependencies:
     "@types/node" ">=8.1.0"
     qs "^6.11.0"
