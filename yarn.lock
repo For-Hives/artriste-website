@@ -452,10 +452,10 @@
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.27.8.tgz#6667fac16c436b5434a387a34dedb013198f6e6e"
   integrity sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==
 
-"@stripe/stripe-js@3.0.8":
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-3.0.8.tgz#7328688356e22dc2f9e5e13b769b446cf1b2e922"
-  integrity sha512-nEDZjCSrGI5GICqr2DsV7gPnEjmt5Y61Uj/z/UuWu3WR/ZyyskbEW/3ziVZdnnvFcoNCfpV2wA2ar1C1W//+Vg==
+"@stripe/stripe-js@3.0.9":
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-3.0.9.tgz#4f4acbf68004f85bb699bc6ac50f503f2f9961d9"
+  integrity sha512-gd6MeFPqVuUSkEeaeMatHBiZZau+/f3lXdXeLmmetNyxeW2IireHHi2IWly3BYSiSOOs5LOvo9P4Hs2au3D2rA==
 
 "@sveltejs/adapter-auto@3.1.1":
   version "3.1.1"
