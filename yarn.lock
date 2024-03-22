@@ -289,10 +289,10 @@
   dependencies:
     "@tanstack/vue-virtual" "^3.0.0-beta.60"
 
-"@heroicons/vue@2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@heroicons/vue/-/vue-2.1.1.tgz#76299d6607a7a1164e3e06a037d7cf721c53b223"
-  integrity sha512-Yi5nh/89L193ALgHyJUQUdNLsKXPrrE3yj5yiR8WAlo7nZyXGxGauQcEAmBsa2XJGMhBMuEdoOiuZ8wEwTBxVQ==
+"@heroicons/vue@2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@heroicons/vue/-/vue-2.1.2.tgz#314d25ffe82a565bd6fc08374ca95b645ebf871c"
+  integrity sha512-FIUWzFXwR8XxbUPug8GzatKsYH/M/yW0UeLZHzTjbj8/Po0UVSrqBQjdft/Ak/vMwmN97najDWWGuL6vCu906A==
 
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"
