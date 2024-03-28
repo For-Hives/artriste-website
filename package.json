@@ -23,7 +23,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "3.2.0",
 		"@sveltejs/adapter-node": "5.0.1",
-		"@sveltejs/kit": "1.30.4",
+		"@sveltejs/kit": "2.5.5",
 		"@typescript-eslint/eslint-plugin": "7.4.0",
 		"@typescript-eslint/parser": "7.4.0",
 		"autoprefixer": "10.4.19",
