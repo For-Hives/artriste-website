@@ -4,7 +4,7 @@ import { SECRET_STRIPE_KEY } from '$env/static/private'
 
 import PocketBase from 'pocketbase'
 
-const pb = new PocketBase('https://artriste-api.beta.andy-cinquin.fr')
+const pb = new PocketBase('https://api.artriste.cc')
 
 const stripe = new Stripe(SECRET_STRIPE_KEY, {
 	apiVersion: '2022-11-15',

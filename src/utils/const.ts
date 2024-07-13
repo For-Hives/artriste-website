@@ -1,4 +1,4 @@
-export const api_origin = 'https://artriste-api.beta.andy-cinquin.fr/api/files/'
+export const api_origin = 'https://api.artriste.cc/api/files/'
 export const product_infos = [
 	'Le tableau est unique et vous en serez le seul et unique propriétaire.',
 	"Le tableau est envoyé avec un certificat d'authenticité.",

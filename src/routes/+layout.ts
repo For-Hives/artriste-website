@@ -5,7 +5,7 @@ import { oeuvres } from '../utils/store'
 import PocketBase from 'pocketbase'
 import type { Oeuvre } from '../interfaces/oeuvre'
 
-const pb = new PocketBase('https://artriste-api.beta.andy-cinquin.fr')
+const pb = new PocketBase('https://api.artriste.cc')
 
 async function get_datas(): Promise<Oeuvre[]> {
 	return await pb.collection('oeuvre').getFullList(200 /* batch size */, {
