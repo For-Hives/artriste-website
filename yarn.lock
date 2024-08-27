@@ -2429,10 +2429,10 @@ pirates@^4.0.1:
   resolved "https://registry.yarnpkg.com/pirates/-/pirates-4.0.5.tgz#feec352ea5c3268fb23a37c702ab1699f35a5f3b"
   integrity sha512-8V9+HQPupnaXMA23c5hvl69zXvTwTzyAYasnkb0Tts4XvO4CliqONMOnvlq26rkhLC3nWDFBJf73LU1e1VZLaQ==
 
-pocketbase@0.21.4:
-  version "0.21.4"
-  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.21.4.tgz#8ea951009a98e74d24606e3b403ca05e505ef715"
-  integrity sha512-WJHyaqdAt95JgZ1OCRD099+DST4IIG0M/jMrCckWYDSN/6ocp61qsz7m6h0xI0J2N79ScBljceEC0fFAaQrrAw==
+pocketbase@0.21.5:
+  version "0.21.5"
+  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.21.5.tgz#10714d264f80e5c6654a54b41ecb2219da497939"
+  integrity sha512-bnI/uinnQps+ElSlzxkc4yvwuSFfKcoszDtXH/4QT2FhGq2mJVUvDlxn+rjRXVntUjPfmMG5LEPZ1eGqV6ssog==
 
 postcss-import@^15.1.0:
   version "15.1.0"
