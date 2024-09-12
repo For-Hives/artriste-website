@@ -53,6 +53,6 @@
 		"eventsource": "2.0.2",
 		"pocketbase": "0.21.4",
 		"prettier-plugin-tailwindcss": "0.6.6",
-		"stripe": "16.10.0"
+		"stripe": "16.11.0"
 	}
 }
