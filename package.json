@@ -48,7 +48,7 @@
 	"dependencies": {
 		"@headlessui/vue": "1.7.23",
 		"@heroicons/vue": "2.1.5",
-		"@stripe/stripe-js": "4.6.0",
+		"@stripe/stripe-js": "4.7.0",
 		"dotenv": "16.4.5",
 		"eventsource": "2.0.2",
 		"pocketbase": "0.21.5",
