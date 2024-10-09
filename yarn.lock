@@ -693,10 +693,10 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.9.5.tgz#10491ccf4f63c814d4149e0316541476ea603602"
   integrity sha512-1q+mykKE3Vot1kaFJIDoUFv5TuW+QQVaf2FmTT9krg86pQrGStOSJJ0Zil7CFagyxDuouTepzt5Y5TVzyajOdQ==
 
-"@stripe/stripe-js@4.7.0":
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-4.7.0.tgz#b6bbf664e866515edf0b65dcf6517bb7ac1f58e8"
-  integrity sha512-Dfdg8UumBu+zDnBgGw30zEE9PIm8lunDUuwy2Bois9bb2sxCohVbD1PpAnasPIZhYfIbigmTHEr/Hg+56Vue6A==
+"@stripe/stripe-js@4.8.0":
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-4.8.0.tgz#ba78f775347cb30e93e13aa408b345de15e3ff80"
+  integrity sha512-+4Cb0bVHlV4BJXxkJ3cCLSLuWxm3pXKtgcRacox146EuugjCzRRII5T5gUMgL4HpzrBLVwVxjKaZqntNWAXawQ==
 
 "@sveltejs/adapter-auto@3.2.5":
   version "3.2.5"
