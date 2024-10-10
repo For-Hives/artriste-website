@@ -705,10 +705,10 @@
   dependencies:
     import-meta-resolve "^4.1.0"
 
-"@sveltejs/adapter-node@5.2.5":
-  version "5.2.5"
-  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-node/-/adapter-node-5.2.5.tgz#327880d03740e7c14cf70774c88db61fc37642fa"
-  integrity sha512-FVeysFqeIlKFpDF1Oj38gby34f6uA9FuXnV330Z0RHmSyOR9JzJs70/nFKy1Ue3fWtf7S0RemOrP66Vr9Jcmew==
+"@sveltejs/adapter-node@5.2.6":
+  version "5.2.6"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-node/-/adapter-node-5.2.6.tgz#1143188b887b99bcddaca17b9389b0d6a0b43496"
+  integrity sha512-FT9MDduZT2srUz/gDFFhQ3U2Mp9reZ3xJdJBEhr/lk+dkieSSpdgIDNNbMkm84hTaXXiC7f4cPNk8fB5nT3N2g==
   dependencies:
     "@rollup/plugin-commonjs" "^28.0.0"
     "@rollup/plugin-json" "^6.1.0"
