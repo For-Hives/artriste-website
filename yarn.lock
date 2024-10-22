@@ -795,10 +795,10 @@
   resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-4.9.0.tgz#95dc000b2f90aeb4db2f2bab82a2fc574f26d1fd"
   integrity sha512-tMPZQZZXGWyNX7hbgenq+1xEj2oigJ54XddbtSX36VedoKsPBq7dxwRXu4Xd5FdpT3JDyyDtnmvYkaSnH1yHTQ==
 
-"@sveltejs/adapter-auto@3.2.5":
-  version "3.2.5"
-  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-auto/-/adapter-auto-3.2.5.tgz#b0247c96ecb66769aac3fe2ffe787a68c8805f62"
-  integrity sha512-27LR+uKccZ62lgq4N/hvyU2G+hTP9fxWEAfnZcl70HnyfAjMSsGk1z/SjAPXNCD1mVJIE7IFu3TQ8cQ/UH3c0A==
+"@sveltejs/adapter-auto@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-auto/-/adapter-auto-3.3.0.tgz#34ebe894616a53c4bcee4a5e6cc0d8dd5acdeade"
+  integrity sha512-EJZqY7eMM+bdbR898Xt9ufawUHLPJu7w3wPr4Cc+T1iIDf3fufVLWg4C71OluIqsdJqv85E4biKuHo3XXIY0PQ==
   dependencies:
     import-meta-resolve "^4.1.0"
 
