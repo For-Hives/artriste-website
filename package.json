@@ -52,7 +52,7 @@
 		"dotenv": "16.4.5",
 		"eventsource": "2.0.2",
 		"pocketbase": "0.22.0",
-		"prettier-plugin-tailwindcss": "0.6.8",
+		"prettier-plugin-tailwindcss": "0.6.9",
 		"stripe": "17.4.0"
 	}
 }
