@@ -1,5 +1,3 @@
-export const prerender = true
-
 import '../app.scss'
 import { oeuvres } from '../utils/store'
 import PocketBase from 'pocketbase'
@@ -15,7 +13,19 @@ async function get_datas(): Promise<Oeuvre[]> {
 
 /** @type {import("./$types").LayoutLoad} */
 export async function load() {
-	// set data
-	const records = await get_datas()
-	oeuvres.set(records)
+	try {
+		// set data
+		const records = await get_datas()
+		oeuvres.set(records)
+		return {
+			oeuvres: records,
+		}
+	} catch (error) {
+		console.error('Error loading oeuvres:', error)
+		// Return empty array on error to prevent crash
+		oeuvres.set([])
+		return {
+			oeuvres: [],
+		}
+	}
 }
