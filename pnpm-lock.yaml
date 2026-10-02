@@ -24,8 +24,8 @@ importers:
         specifier: 2.0.2
         version: 2.0.2
       pocketbase:
-        specifier: 0.26.5
-        version: 0.26.5
+        specifier: 0.28.1
+        version: 0.28.1
       prettier-plugin-tailwindcss:
         specifier: 0.7.2
         version: 0.7.2(prettier-plugin-svelte@3.4.0(prettier@3.9.9)(svelte@4.2.20))(prettier@3.9.9)
@@ -1747,8 +1747,8 @@ packages:
     resolution: {integrity: sha512-TfySrs/5nm8fQJDcBDuUng3VOUKsd7S+zqvbOTiGXHfxX4wK31ard+hoNuvkicM/2YFzlpDgABOevKSsB4G/FA==}
     engines: {node: '>= 6'}
 
-  pocketbase@0.26.5:
-    resolution: {integrity: sha512-SXcq+sRvVpNxfLxPB1C+8eRatL7ZY4o3EVl/0OdE3MeR9fhPyZt0nmmxLqYmkLvXCN9qp3lXWV/0EUYb3MmMXQ==}
+  pocketbase@0.28.1:
+    resolution: {integrity: sha512-/3ihkq+rvfcs0MQgrK4sEElOg6gfenHW9S/O+3BSO+V1yT+4B10+9aT22uTQUPqze9ItwNtwWyY5ZmdgVCTdVA==}
 
   postcss-import@15.1.0:
     resolution: {integrity: sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==}
@@ -3854,7 +3854,7 @@ snapshots:
 
   pirates@4.0.7: {}
 
-  pocketbase@0.26.5: {}
+  pocketbase@0.28.1: {}
 
   postcss-import@15.1.0(postcss@8.5.28):
     dependencies:
