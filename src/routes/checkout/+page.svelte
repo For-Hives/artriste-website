@@ -3,6 +3,8 @@
 	import { onMount } from 'svelte'
 	import { loadStripe } from '@stripe/stripe-js'
 	import { PUBLIC_STRIPE_KEY } from '$env/static/public'
+	import { env } from '$env/dynamic/public'
+	import { dev } from '$app/environment'
 	import {
 		Elements,
 		PaymentElement,
@@ -20,27 +22,66 @@
 	let error = null
 	let elements
 	let processing = false
-	onMount(async () => {
-		stripe = await loadStripe(PUBLIC_STRIPE_KEY)
-		// create payment intent server side
-		clientSecret = await createPaymentIntent()
+
+	// Widget Turnstile « artriste.cc checkout » : le paiement n'est préparé qu'après la vérification anti-robot.
+	// En développement : clé de test de Cloudflare, qui passe toujours.
+	const TURNSTILE_SITE_KEY =
+		env.PUBLIC_TURNSTILE_SITE_KEY ||
+		(dev ? '1x00000000000000000000AA' : '0x4AAAAAAGJBiaJ0aKLhKt0B')
+	let turnstileContainer
+	let turnstileWidget = null
+
+	function renderTurnstile() {
+		if (!window.turnstile || !turnstileContainer || turnstileWidget !== null)
+			return
+		turnstileWidget = window.turnstile.render(turnstileContainer, {
+			sitekey: TURNSTILE_SITE_KEY,
+			language: 'fr',
+			theme: 'light',
+			callback: async token => {
+				if (clientSecret) return
+				error = null
+				clientSecret = await createPaymentIntent(token)
+			},
+			'error-callback': () => {
+				error = { message: "La vérification anti-robot n'a pas pu se faire." }
+			},
+		})
+	}
+
+	onMount(() => {
+		loadStripe(PUBLIC_STRIPE_KEY).then(s => (stripe = s))
+		// Script Turnstile chargé ici, en rendu explicite : le jeton arrive dans `callback`.
+		const script = document.createElement('script')
+		script.src =
+			'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
+		script.async = true
+		script.onload = renderTurnstile
+		document.head.appendChild(script)
+		return () => {
+			if (turnstileWidget !== null) window.turnstile?.remove(turnstileWidget)
+			script.remove()
+		}
 	})
 
-	async function createPaymentIntent() {
+	// Seul l'identifiant de l'œuvre part : le prix est relu côté serveur.
+	async function createPaymentIntent(turnstileToken) {
 		const response = await fetch('/checkout/intent', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json',
 			},
-			body: JSON.stringify({
-				amount: data.oeuvre.price,
-				currency: 'eur',
-				id: data.oeuvre.id,
-				description: data.oeuvre.name,
-			}),
+			body: JSON.stringify({ id: data.oeuvre.id, turnstileToken }),
 		})
-		const { clientSecret } = await response.json()
-		return clientSecret
+		const result = await response.json()
+		if (!response.ok) {
+			error = {
+				message: result.error ?? 'Le paiement ne peut pas être préparé.',
+			}
+			if (turnstileWidget !== null) window.turnstile?.reset(turnstileWidget)
+			return null
+		}
+		return result.clientSecret
 	}
 
 	async function submit() {
@@ -121,6 +162,9 @@
 							<p class='error font-semibold text-gray-500'>
 								{error.message} Please try again.
 							</p>
+						{/if}
+						{#if !clientSecret}
+							<div bind:this={turnstileContainer} class='min-h-[65px]' />
 						{/if}
 						{#if stripe && clientSecret}
 							<Elements
