@@ -18,9 +18,10 @@ jobs:
         run: |
           echo "PUBLIC_STRIPE_KEY=${PUBLIC_STRIPE_KEY}" >> .env
           echo "SECRET_STRIPE_KEY=${SECRET_STRIPE_KEY}" >> .env
-      - name: Yarn install and build
+      - name: Yarn install, tests and build
         run: |
           yarn install
+          yarn vitest run
           yarn build
       - name: Build Docker image
         uses: docker/build-push-action@v5
